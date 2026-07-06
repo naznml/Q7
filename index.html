@@ -1,0 +1,5136 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Интербелсенді оқу әдістемесі</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f8fafc;
+  color:#0f172a;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+.hero{
+  background:linear-gradient(135deg,#0e7490,#15803d,#c2410c);
+  color:white;
+  text-align:center;
+  padding:34px 18px 30px;
+}
+.booktag{
+  display:inline-block;
+  background:rgba(255,255,255,.17);
+  border:1px solid rgba(255,255,255,.35);
+  padding:7px 14px;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h1{
+  margin:0;
+  font-size:34px;
+  line-height:1.15;
+}
+.subtitle{
+  max-width:980px;
+  margin:13px auto 0;
+  font-size:16px;
+  opacity:.96;
+}
+.notice{
+  max-width:920px;
+  margin:18px auto 0;
+  background:#fef3c7;
+  color:#78350f;
+  border:2px solid #facc15;
+  border-radius:20px;
+  padding:13px 16px;
+  font-weight:800;
+}
+.notice small{
+  display:block;
+  font-weight:600;
+  margin-top:6px;
+}
+.pay{
+  margin-top:9px;
+  padding-top:9px;
+  border-top:1px dashed rgba(120,53,15,.35);
+}
+.wrap{
+  max-width:1160px;
+  margin:26px auto 70px;
+  padding:0 16px;
+}
+.sourcebox{
+  background:white;
+  border:1px solid #bae6fd;
+  border-radius:28px;
+  padding:22px;
+  margin-bottom:26px;
+  box-shadow:0 16px 38px rgba(8,145,178,.10);
+}
+.sourcebox h2{
+  margin:0 0 12px;
+  color:#0e7490;
+  font-size:25px;
+}
+.sourcegrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.sourcecard{
+  background:#ecfeff;
+  border:1px solid #bae6fd;
+  border-radius:20px;
+  padding:15px;
+}
+.sourcecard b{
+  display:block;
+  color:#0e7490;
+  margin-bottom:6px;
+}
+.sourcecard span{
+  color:#334155;
+  font-size:14px;
+}
+.mainnav{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:16px;
+}
+.mainnav a{
+  text-decoration:none;
+  background:#f0fdf4;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  border-radius:18px;
+  padding:13px 14px;
+  font-weight:900;
+}
+.mainnav a:hover{background:#dcfce7}
+.block{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:28px;
+  padding:24px;
+  margin-bottom:28px;
+  box-shadow:0 14px 36px rgba(15,23,42,.08);
+  scroll-margin-top:20px;
+}
+.blockhead{
+  border-bottom:1px solid #e2e8f0;
+  padding-bottom:15px;
+  margin-bottom:18px;
+}
+.blockhead h2{
+  margin:0;
+  color:#0e7490;
+  font-size:27px;
+}
+.meta{
+  display:inline-block;
+  margin-top:9px;
+  background:#cffafe;
+  color:#155e75;
+  border-radius:999px;
+  padding:5px 11px;
+  font-size:13px;
+  font-weight:900;
+}
+.infobox{
+  border-radius:20px;
+  padding:15px 16px;
+  margin:15px 0;
+}
+.blue{background:#ecfeff;border-left:6px solid #0891b2}
+.green{background:#f0fdf4;border-left:6px solid #16a34a}
+.orange{background:#fff7ed;border-left:6px solid #f97316}
+.infobox h3{margin:0 0 8px}
+.blue h3{color:#0e7490}
+.green h3{color:#166534}
+.orange h3{color:#c2410c}
+.keys{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:16px 0;
+}
+.key{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+  padding:10px 12px;
+  font-size:14px;
+}
+.key b{color:#0f172a}
+.q{
+  border:1px solid #e5e7eb;
+  border-radius:22px;
+  padding:17px;
+  margin:16px 0;
+  background:#fff;
+}
+.qtop{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+.badge{
+  display:inline-block;
+  background:#cffafe;
+  color:#0e7490;
+  border-radius:999px;
+  padding:4px 10px;
+  font-size:12px;
+  font-weight:900;
+}
+.qtitle{
+  font-weight:900;
+  margin-bottom:11px;
+}
+.opt{
+  display:block;
+  margin:8px 0;
+  padding:11px 13px;
+  border-radius:14px;
+  background:#fafafa;
+  border:1px solid #f1f5f9;
+  cursor:pointer;
+}
+.opt:hover{
+  background:#ecfeff;
+  border-color:#bae6fd;
+}
+.opt input{margin-right:8px}
+.opt.correct{
+  background:#dcfce7;
+  border-color:#22c55e;
+}
+.opt.wrong{
+  background:#fee2e2;
+  border-color:#ef4444;
+}
+.explain{
+  display:none;
+  margin-top:10px;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:15px;
+  padding:11px 12px;
+  font-size:14px;
+}
+.explain b{color:#0e7490}
+.actions{
+  margin-top:18px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn{
+  border:0;
+  border-radius:17px;
+  background:linear-gradient(135deg,#0e7490,#15803d,#c2410c);
+  color:white;
+  font-size:15px;
+  font-weight:900;
+  padding:13px 22px;
+  cursor:pointer;
+}
+.btn2{
+  border:1px solid #cbd5e1;
+  background:#f8fafc;
+  color:#0f172a;
+}
+.result{
+  display:none;
+  margin-top:16px;
+  background:#ecfeff;
+  border:1px solid #bae6fd;
+  border-left:6px solid #0891b2;
+  border-radius:18px;
+  padding:15px;
+  font-weight:900;
+}
+.footer{
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
+  margin:34px 0 0;
+}
+@media(max-width:800px){
+  h1{font-size:27px}
+  .sourcegrid,.mainnav,.keys{grid-template-columns:1fr}
+  .block{padding:19px;border-radius:24px}
+  .blockhead h2{font-size:22px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="booktag">Қазақ тілін оқыту әдістемесі</div>
+  <h1>Интербелсенді оқу әдістемесі</h1>
+  <div class="subtitle">
+    Магистратураға түсуге арналған дайындық сайты. Материал интербелсенді оқу, бірлескен әрекет, сыни ойлау, диалог, рефлексия, бағалау және сабақ құрылымын ұйымдастыру мәселелерін қамтиды.
+  </div>
+  <div class="notice">
+    © @elnazm_ln — Назерке<br>
+    Бұл сайттың ресми авторы — @elnazm_ln. Материалды тек автордың өзі ғана сата алады.
+    <small>Егер бұл тестті сізге басқа адам сатса, авторға хабарлаңыз.</small>
+    <div class="pay">Төлем: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.</div>
+  </div>
+</section>
+
+<main class="wrap">
+
+<section class="sourcebox">
+  <h2>Негізгі дереккөздер</h2>
+  <div class="sourcegrid">
+    <div class="sourcecard">
+      <b>1-кітап</b>
+      <span>Әлімов А.Қ. Интербелсенді оқу әдістемесін мектепте қолдану. Оқу құралы. Астана, 2014.</span>
+    </div>
+    <div class="sourcecard">
+      <b>2-кітап</b>
+      <span>Құрманова Н.Ж. Қазақ тілін оқытудың әдіснамалық негіздері. Астана, 2008.</span>
+    </div>
+    <div class="sourcecard">
+      <b>3-кітап</b>
+      <span>Жақсылықова К.Б. Қазақ тілін модуль арқылы үйрету: теориясы және әдістемесі. Алматы, 2007.</span>
+    </div>
+    <div class="sourcecard">
+      <b>Қосымша құрылымдық материал</b>
+      <span>Қазақ тілін оқыту әдістемесі пәнінің силлабусы мен бұрынғы дайын құрылым.</span>
+    </div>
+  </div>
+
+  <div class="mainnav" id="bookNav"><a href="#b1">1-кітап</a><a href="#b12">2-кітап</a><a href="#b13">3-кітап</a><a href="#b18">Қорытынды</a></div>
+</section>
+
+<div id="app">
+
+  <section class="block" id="b1">
+    <div class="blockhead">
+      <h2>Интербелсенді әдістеменің негізгі мәселелері</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде интербелсенді оқудың мәні, оқу үдерісіндегі өзара әрекет, әрекет арқылы үйрену, білімді дайын күйінде қабылдамай, оқушының өз тәжірибесі арқылы игеруі қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Интербелсенді әдістеме оқушыны сабақтағы дайын ақпаратты үнсіз қабылдаушы емес, белсенді әрекет арқылы білім құрастырушы тұлға ретінде қарастырады. Мұндай оқытуда басты тірек — өзара әрекет, бірлескен жұмыс, сұрақ қою, пікір алмасу, талқылау және рефлексия. Әлімов еңбегінде интербелсенді оқыту үйрену мен үйретудің тек өзара белсенді әрекет арқылы жүзеге асатынын көрсетеді. Оқушы жаңа білімді мұғалімнің дайын түсіндіруінен ғана емес, өз әрекеті, тәжірибесі, ойлануы, дәлелдеуі және басқалармен қарым-қатынасы арқылы меңгереді.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>интербелсенді оқу:</b> өзара әрекет пен белсенді қатысу арқылы білімді игеру үдерісі</div>
+  
+    <div class="key"><b>әрекет арқылы үйрену:</b> оқушының білімді нақты тапсырма, тәжірибе және талқылау арқылы меңгеруі</div>
+  
+    <div class="key"><b>өзара әрекет:</b> оқушылардың бір-бірімен байланысып, пікір алмасып, ортақ жұмыс орындауы</div>
+  
+    <div class="key"><b>білім құрастыру:</b> оқушының жаңа түсінікті өз ойы, тәжірибесі және талдауы арқылы қалыптастыруы</div>
+  
+    <div class="key"><b>рефлексия:</b> оқушының өз оқу әрекетін, түсінігін және нәтижесін талдауы</div>
+  
+    <div class="key"><b>белсенді қатысу:</b> оқушының сабақта ойымен, сөзімен және әрекетімен араласуы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Интербелсенді оқудың негізгі мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b1_0" value="a">
+          оқушының өзара әрекет пен белсенді қатысу арқылы білімді игеруі
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b1_0" value="b">
+          оқушының дайын ақпаратты үнсіз қабылдауы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b1_0" value="c">
+          сабақтың тек мұғалім түсіндіруімен шектелуі
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b1_0" value="d">
+          оқушы пікірінің оқу үдерісінен шығарылуы
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b1_0" value="e">
+          тапсырманың әрекетсіз орындалуы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді оқу оқушының өзара әрекетке түсіп, белсенді қатысуы арқылы жүзеге асады. Әлімов еңбегінде бұл мәселе интербелсенді әдістеменің негізгі бөлімінде, өзара әрекет арқылы үйрену идеясымен түсіндіріледі. Дерек: Әлімов А.Қ., 2014, 7–12-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Интербелсенді әдістемеде оқушы қандай тұлға ретінде қарастырылады?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b1_1" value="a">
+          білімді өз әрекеті арқылы құрастыратын белсенді қатысушы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b1_1" value="b">
+          дайын жауапты ғана көшіретін орындаушы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b1_1" value="c">
+          талқылауға қатыспайтын бақылаушы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b1_1" value="d">
+          топтық жұмысқа араласпайтын тыңдаушы
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b1_1" value="e">
+          өз оқу нәтижесін талдамайтын қабылдаушы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: оқушы білімді өз әрекеті арқылы құрастыратын белсенді қатысушы. Интербелсенді оқуда оқушы дайын ақпаратты қабылдаушы емес, тапсырма орындап, пікір алмасып, талдау арқылы білімге жететін тұлға ретінде танылады. Дерек: Әлімов А.Қ., 2014, 10–15-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Интербелсенді оқуға тән негізгі белгілер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b1_2" value="a">
+          өзара әрекет
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b1_2" value="b">
+          бірлескен жұмыс
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b1_2" value="c">
+          диалог арқылы үйрену
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b1_2" value="d">
+          оқушының үнсіз қабылдауы
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b1_2" value="e">
+          мұғалімнің дайын жауапты толық беруі
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b1_2" value="f">
+          тапсырманы талқылаусыз орындау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b1_2" value="g">
+          оқушы пікірін ескермеу
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b1_2" value="h">
+          рефлексияны сабақтан шығару
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: өзара әрекет, бірлескен жұмыс, диалог арқылы үйрену. Әлімов интербелсенді әдістемені өзара әрекеттесу және әрекет арқылы үйрену жүйесі ретінде сипаттайды. Дерек: Әлімов А.Қ., 2014, 10–12-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Интербелсенді сабақта білімді игеруге көмектесетін әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b1_3" value="a">
+          талқылау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b1_3" value="b">
+          пікір алмасу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b1_3" value="c">
+          рефлексия жасау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b1_3" value="d">
+          дайын жауапты дәлелсіз көшіру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b1_3" value="e">
+          оқушы ойын айтқызбау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b1_3" value="f">
+          сұрақ қоюды шектеу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b1_3" value="g">
+          бірлескен жұмысты тоқтату
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: талқылау және пікір алмасу. Интербелсенді оқу оқушының белсенді әрекетіне, сөйлесуіне, өз ойын жеткізуіне және басқамен байланыс орнатуына сүйенеді. Дерек: Әлімов А.Қ., 2014, 15–22-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b1_4" value="a">
+          интербелсенді оқу оқушыны белсенді әрекетке енгізіп, білімді тәжірибе арқылы меңгертеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b1_4" value="b">
+          интербелсенді оқу оқушының әрекетін шектейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b1_4" value="c">
+          интербелсенді әдістеме тек дайын жауапты жаттауға негізделеді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b1_4" value="d">
+          өзара әрекет білім игеруге қатыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b1_4" value="e">
+          рефлексия интербелсенді сабаққа қажет емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді оқу оқушыны белсенді әрекетке енгізеді. Бұл әдістеме білімді дайын күйінде қабылдатпай, тәжірибе, талқылау, әрекет және рефлексия арқылы меңгертуге бағытталады. Дерек: Әлімов А.Қ., 2014, 7–22-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b1')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b1')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b1_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b2">
+    <div class="blockhead">
+      <h2>Бірлескен әрекет және диалог арқылы үйрену</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде бірлескен әрекеттің интербелсенді оқудағы орны, диалогтың білім игерудегі қызметі, топтық және жұптық жұмыстың оқушы белсенділігін арттырудағы рөлі қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Бірлескен әрекет — интербелсенді оқудың негізгі тірегі. Оқушылар ортақ тапсырманы орындау барысында пікір алмасады, бір-бірін тыңдайды, сұрақ қояды, жауап береді, өз ойын дәлелдейді және ортақ шешімге келеді. Диалог тек сөйлесу емес, оқушының ойлауын, дәлелдеуін, салыстыруын және өз көзқарасын нақтылауын дамытатын оқу құралы. Топтық және жұптық жұмыс дұрыс ұйымдастырылғанда оқушылардың жауапкершілігі, өзара қолдауы және қатысымдық белсенділігі артады.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>бірлескен әрекет:</b> ортақ мақсатқа жету үшін оқушылардың бірге жұмыс істеуі</div>
+  
+    <div class="key"><b>диалог:</b> пікір алмасу, сұрақ қою, жауап беру және ойды нақтылау үдерісі</div>
+  
+    <div class="key"><b>топтық жұмыс:</b> бірнеше оқушының ортақ тапсырманы бірлесіп орындауы</div>
+  
+    <div class="key"><b>жұптық жұмыс:</b> екі оқушының өзара әрекет арқылы тапсырма орындауы</div>
+  
+    <div class="key"><b>ортақ шешім:</b> талқылау нәтижесінде топтың келісіп қабылдаған қорытындысы</div>
+  
+    <div class="key"><b>өзара қолдау:</b> оқушылардың бір-біріне түсіндіруі, көмектесуі және толықтыруы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Бірлескен әрекеттің негізгі мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b2_0" value="a">
+          оқушылардың ортақ мақсатқа жету үшін бірге жұмыс істеуі
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b2_0" value="b">
+          оқушылардың бір-бірімен байланыссыз жеке отыруы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b2_0" value="c">
+          мұғалімнің тапсырманы оқушы орнына орындауы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b2_0" value="d">
+          оқушылардың пікір алмасуын шектеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b2_0" value="e">
+          топ мүшелерінің жауапкершілігін алып тастау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: бірлескен әрекет оқушылардың ортақ мақсатқа жету үшін бірге жұмыс істеуін білдіреді. Әлімов еңбегінде бірлескен әрекет интербелсенді оқу мен оқытудың негізгі тірегі ретінде берілген. Дерек: Әлімов А.Қ., 2014, 12–15-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Диалогтың оқу үдерісіндегі негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b2_1" value="a">
+          оқушының ойлауын, сөйлеуін және дәлелдеуін дамыту
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b2_1" value="b">
+          оқушының пікір айтуын тоқтату
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b2_1" value="c">
+          оқушыны дайын жауапты ғана көшіруге бағыттау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b2_1" value="d">
+          оқушының тыңдау әрекетін қажетсіз ету
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b2_1" value="e">
+          оқушының ойды нақтылауын шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: диалог оқушының ойлауын, сөйлеуін және дәлелдеуін дамытады. Кітапта диалог адамгершілікке үйренудің негізгі құралы ретінде жеке бөлімде қарастырылады. Дерек: Әлімов А.Қ., 2014, 47-бет.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Бірлескен әрекет барысында қалыптасатын дағдылар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b2_2" value="a">
+          пікір алмасу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b2_2" value="b">
+          өз ойын дәлелдеу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b2_2" value="c">
+          басқаны тыңдау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b2_2" value="d">
+          жауапкершілік бөлісу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b2_2" value="e">
+          ортақ шешімге келу
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b2_2" value="f">
+          оқушы пікірін тоқтату
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b2_2" value="g">
+          бірлескен жұмысты болдырмау
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b2_2" value="h">
+          талқылауды қажетсіз ету
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: пікір алмасу, өз ойын дәлелдеу, басқаны тыңдау. Бірлескен әрекет оқушыны талқылауға, дәлелдеуге және тыңдауға үйретеді. Дерек: Әлімов А.Қ., 2014, 12–15-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Топтық жұмысты ұйымдастыруда мұғалім нақтылайтын негізгі шарттар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b2_3" value="a">
+          ортақ мақсат
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b2_3" value="b">
+          оқушылардың рөлдері
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b2_3" value="c">
+          орындау уақыты
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b2_3" value="d">
+          күтілетін нәтиже
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b2_3" value="e">
+          бағалау өлшемі
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b2_3" value="f">
+          топтық жауап түрі
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b2_3" value="g">
+          оқушы әрекетін шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: ортақ мақсат және оқушылардың рөлдері. Топтық жұмыс нәтижелі болуы үшін мұғалім мақсатты, рөлдерді, уақытты және нәтижені алдын ала нақтылауы қажет. Дерек: Әлімов А.Қ., 2014, 64–69-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b2_4" value="a">
+          бірлескен әрекет пен диалог оқушының қатысымдық және танымдық белсенділігін арттырады
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b2_4" value="b">
+          бірлескен әрекет оқушының ойлауына әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b2_4" value="c">
+          диалог сабақта тек уақыт өткізу үшін қолданылады
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b2_4" value="d">
+          топтық жұмыс жауапкершілікті дамытпайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b2_4" value="e">
+          жұптық жұмыс оқушының сөйлеуін шектейді
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: бірлескен әрекет пен диалог оқушының қатысымдық және танымдық белсенділігін арттырады. Әлімов еңбегінде бұл интербелсенді оқудың негізгі тіректері ретінде қарастырылады. Дерек: Әлімов А.Қ., 2014, 12–15, 47-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b2')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b2')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b2_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b3">
+    <div class="blockhead">
+      <h2>Сыни ойлау және проблемалық тапсырма</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде сыни ойлау, проблемалық тапсырма, мәселені анықтау, дәлелдеу, салыстыру, шешім ұсыну және оқушының танымдық белсенділігін дамыту жолдары қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Сыни ойлау оқушының ақпаратты дайын күйінде қабылдамай, оны талдауына, салыстыруына, дәлелдеуіне, бағалауына және қорытынды жасауына негізделеді. Проблемалық тапсырма оқушыға дайын жауап бермей, мәселені өз бетімен түсінуге, болжам жасауға, дәлел іздеуге және шешім ұсынуға мүмкіндік береді. Интербелсенді әдістемеде сыни ойлау оқушының танымдық белсенділігін арттырып, өз пікірін негіздеп айтуына, балама көзқарасты салыстыруына және оқу нәтижесін саналы түсінуіне көмектеседі.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>сыни ойлау:</b> ақпаратты талдау, салыстыру, дәлелдеу және бағалау қабілеті</div>
+  
+    <div class="key"><b>проблемалық тапсырма:</b> оқушыны мәселені шешуге және дәлел іздеуге бағыттайтын тапсырма</div>
+  
+    <div class="key"><b>дәлелдеу:</b> жауапты дерек, мысал және логикалық негіз арқылы түсіндіру</div>
+  
+    <div class="key"><b>балама пікір:</b> мәселеге қатысты басқа көзқарас немесе шешім нұсқасы</div>
+  
+    <div class="key"><b>танымдық белсенділік:</b> оқушының ойлау, іздену және шешім жасау әрекетінің күшеюі</div>
+  
+    <div class="key"><b>қорытынды жасау:</b> талдау нәтижесінде негізгі тұжырымға келу</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Сыни ойлаудың негізгі белгісі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b3_0" value="a">
+          ақпаратты талдап, салыстырып, дәлел арқылы бағалау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b3_0" value="b">
+          ақпаратты түсінбей дайын күйінде қайталау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b3_0" value="c">
+          жауапты дәлелсіз қабылдау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b3_0" value="d">
+          мәселені талқылаусыз аяқтау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b3_0" value="e">
+          оқушы пікірін есепке алмау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: сыни ойлау ақпаратты талдау, салыстыру және дәлел арқылы бағалаумен байланысты. Әлімов еңбегінде сыни ойлау жеке бөлім ретінде беріліп, оны сабақта қолдану жолдары қарастырылады. Дерек: Әлімов А.Қ., 2014, 34–38-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Проблемалық тапсырманың негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b3_1" value="a">
+          оқушыны мәселені талдап, шешім ұсынуға бағыттау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b3_1" value="b">
+          оқушыны дайын жауапты көшіруге үйрету
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b3_1" value="c">
+          оқушының ойлау әрекетін шектеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b3_1" value="d">
+          тапсырманы талқылаусыз орындату
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b3_1" value="e">
+          жауапты дәлелдеуді қажетсіз ету
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: проблемалық тапсырма оқушыны мәселені анықтауға, талдауға және шешім ұсынуға бағыттайды. Кітапта проблеманы айқындау, шешу және шешімді қолдану кезеңдері арнайы көрсетілген. Дерек: Әлімов А.Қ., 2014, 137–148-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Сыни ойлауды дамытуға тән әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b3_2" value="a">
+          талдау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b3_2" value="b">
+          салыстыру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b3_2" value="c">
+          дәлелдеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b3_2" value="d">
+          бағалау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b3_2" value="e">
+          қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b3_2" value="f">
+          балама шешім ұсыну
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b3_2" value="g">
+          дайын жауапты көшіріп алу
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b3_2" value="h">
+          пікірді талқылаудан шығару
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: талдау, салыстыру, дәлелдеу. Сыни ойлау оқушының ақпаратты жай қабылдауын емес, оны ой елегінен өткізуін талап етеді. Дерек: Әлімов А.Қ., 2014, 34–41-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Проблемалық тапсырманы орындаудың негізгі қадамдары</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b3_3" value="a">
+          мәселені анықтау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b3_3" value="b">
+          болжам жасау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b3_3" value="c">
+          дәлел іздеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b3_3" value="d">
+          шешім ұсыну
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b3_3" value="e">
+          қорытынды шығару
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b3_3" value="f">
+          нәтижені талқылау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b3_3" value="g">
+          жауапты себепсіз қабылдау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: мәселені анықтау және болжам жасау. Проблемалық тапсырма алдымен мәселені түсінуден, кейін болжам мен дәлел іздеуден басталады. Дерек: Әлімов А.Қ., 2014, 137–143-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b3_4" value="a">
+          сыни ойлау оқушыны мәселені талдап, дәлелдеп, саналы қорытынды жасауға үйретеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b3_4" value="b">
+          сыни ойлау дайын жауапты жаттауға негізделеді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b3_4" value="c">
+          проблемалық тапсырма оқушы белсенділігін төмендетеді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b3_4" value="d">
+          дәлелдеу оқу нәтижесіне қатыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b3_4" value="e">
+          балама пікірді салыстыру қажет емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: сыни ойлау оқушыны талдауға, дәлелдеуге және қорытынды жасауға үйретеді. Бұл интербелсенді оқуда оқушының танымдық белсенділігін күшейтетін негізгі бағыттардың бірі. Дерек: Әлімов А.Қ., 2014, 34–41, 137–148-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b3')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b3')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b3_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b4">
+    <div class="blockhead">
+      <h2>Жағымды психологиялық орта, мотивация және топтық жұмыс</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде интербелсенді оқуда жағымды психологиялық орта құру, оқушы мотивациясын ояту, сәттілікке бағыттау, топтық жұмыс пен өзара қолдауды ұйымдастыру мәселелері қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Интербелсенді сабақта жағымды психологиялық орта оқушының еркін ой айтуына, қателесуден қорықпауына, топта жұмыс істеуіне және белсенді қатысуына жағдай жасайды. Мотивация оқушының оқу мақсатын түсінуіне, тапсырмаға қызығушылық танытуына және нәтижеге ұмтылуына әсер етеді. Топтық жұмыс оқушыларды бірлескен әрекетке, жауапкершілік бөлісуге, өзара көмектесуге және ортақ шешім қабылдауға үйретеді. Мұғалім топтық жұмыста мақсатты, рөлдерді, уақытты, нәтижені және бағалау өлшемін нақты ұйымдастыруы керек.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>жағымды психологиялық орта:</b> оқушының еркін ой айтуына және белсенді қатысуына жағдай жасайтын ахуал</div>
+  
+    <div class="key"><b>мотивация:</b> оқушыны оқу әрекетіне қызығушылықпен қатысуға жетелейтін түрткі</div>
+  
+    <div class="key"><b>сәттілікке бағыттау:</b> оқушының өз мүмкіндігіне сенуіне және нәтижеге ұмтылуына жағдай жасау</div>
+  
+    <div class="key"><b>топтық жұмыс:</b> оқушылардың ортақ тапсырманы бірлесіп орындауы</div>
+  
+    <div class="key"><b>рөл бөлу:</b> топ мүшелерінің міндеттерін нақтылау</div>
+  
+    <div class="key"><b>өзара қолдау:</b> оқушылардың бір-біріне түсіндіруі, көмектесуі және толықтыруы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Жағымды психологиялық ортаның негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b4_0" value="a">
+          оқушының еркін пікір айтып, белсенді қатысуына жағдай жасау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b4_0" value="b">
+          оқушының қателесуден қорқуын күшейту
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b4_0" value="c">
+          оқушының пікір айтуын шектеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b4_0" value="d">
+          топтық жұмысты сабақтан алып тастау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b4_0" value="e">
+          өзара қолдауды тоқтату
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: жағымды психологиялық орта оқушының еркін пікір айтып, белсенді қатысуына мүмкіндік береді. Әлімов еңбегінде бұл интербелсенді оқудың шарттары мен ережелері ішінде қарастырылады. Дерек: Әлімов А.Қ., 2014, 51–57-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Мотивацияның интербелсенді сабақтағы мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b4_1" value="a">
+          оқушының оқу мақсатын түсініп, тапсырмаға қызығушылықпен қатысуы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b4_1" value="b">
+          оқушының сабаққа қатыспай бақылаушы болып қалуы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b4_1" value="c">
+          тапсырманың мақсатын оқушыдан жасыру
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b4_1" value="d">
+          оқушы жетістігін қолдаусыз қалдыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b4_1" value="e">
+          оқу нәтижесін түсіндірмей аяқтау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: мотивация оқушының оқу мақсатын түсініп, тапсырмаға қызығушылықпен қатысуына әсер етеді. Кітапта мотивация тудыру және қызығушылықты ояту жеке тақырып ретінде берілген. Дерек: Әлімов А.Қ., 2014, 57–61-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Мотивация қалыптастыруға әсер ететін факторлар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b4_2" value="a">
+          оқу мақсатының түсінікті болуы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b4_2" value="b">
+          тапсырманың қызықты болуы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b4_2" value="c">
+          оқушы жетістігінің қолдау табуы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b4_2" value="d">
+          жағымды орта қалыптастыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b4_2" value="e">
+          оқушының белсенді қатысуы
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b4_2" value="f">
+          нәтиженің айқын болуы
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b4_2" value="g">
+          оқушы әрекетін шектеу
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b4_2" value="h">
+          қатені жазалау құралына айналдыру
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: оқу мақсатының түсінікті болуы, тапсырманың қызықты болуы, оқушы жетістігінің қолдау табуы. Бұлар оқушының сабаққа қызығушылығын күшейтеді. Дерек: Әлімов А.Қ., 2014, 57–61-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Топтық жұмысты ұйымдастыруда мұғалім нақтылайтын бөліктер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b4_3" value="a">
+          тапсырма мақсаты
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b4_3" value="b">
+          топ мүшелерінің рөлдері
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b4_3" value="c">
+          орындау уақыты
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b4_3" value="d">
+          күтілетін нәтиже
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b4_3" value="e">
+          бағалау өлшемі
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b4_3" value="f">
+          топтық жауап түрі
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b4_3" value="g">
+          оқушыларды үнсіз қалдыру
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b4_3" value="h">
+          ортақ шешімді қажетсіз ету
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: тапсырма мақсаты, топ мүшелерінің рөлдері, орындау уақыты. Топтық жұмыс нәтижелі болуы үшін мұғалім ұйымдастыру шарттарын алдын ала нақтылайды. Дерек: Әлімов А.Қ., 2014, 64–69-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b4_4" value="a">
+          жағымды орта, мотивация және топтық жұмыс оқушының белсенді әрекетіне жағдай жасайды
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b4_4" value="b">
+          жағымды орта интербелсенді сабақта қажет емес
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b4_4" value="c">
+          мотивация оқушының оқу әрекетіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b4_4" value="d">
+          топтық жұмыс жауапкершілікті дамытпайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b4_4" value="e">
+          өзара қолдау оқу нәтижесін әлсіретеді
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: жағымды орта, мотивация және топтық жұмыс оқушының белсенді әрекетіне жағдай жасайды. Бұл интербелсенді оқудың ұйымдастырушылық негізін құрайды. Дерек: Әлімов А.Қ., 2014, 51–69-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b4')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b4')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b4_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b5">
+    <div class="blockhead">
+      <h2>Рефлексия, кері байланыс және бағалау</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде интербелсенді оқуда рефлексия жүргізу, кері байланыс беру, оқу нәтижесін талдау, бағалау тәсілдері және келесі оқу әрекетін жоспарлау мәселелері қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Рефлексия оқушының өз оқу әрекетін, түсінгенін, қиындықтарын және жетістігін саналы талдауына мүмкіндік береді. Кері байланыс оқушыға өзінің жауабын, қатесін, ілгерілеуін және келесі қадамын түсінуге көмектеседі. Интербелсенді сабақта бағалау тек баға қою емес, оқушының оқу мақсатына қаншалықты жеткенін анықтау, дәлелді пікір айту, өзін-өзі және өзара бағалау арқылы оқу сапасын жақсарту құралы ретінде қолданылады. Бағалау өлшемдері түсінікті болғанда оқушы өз нәтижесін бағалап, келесі әрекетін жоспарлай алады.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>рефлексия:</b> оқушының өз оқу әрекеті мен нәтижесін талдауы</div>
+  
+    <div class="key"><b>кері байланыс:</b> оқушының жауабына, қатесіне және ілгерілеуіне берілетін бағыттау</div>
+  
+    <div class="key"><b>бағалау:</b> оқу нәтижесін белгілі өлшем арқылы анықтау</div>
+  
+    <div class="key"><b>өзін-өзі бағалау:</b> оқушының өз жұмысын белгіленген өлшемге сай талдауы</div>
+  
+    <div class="key"><b>өзара бағалау:</b> оқушылардың бір-бірінің жұмысын талдап, ұсыныс беруі</div>
+  
+    <div class="key"><b>бағалау өлшемі:</b> нәтижені анықтауға арналған нақты талап</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Рефлексияның негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b5_0" value="a">
+          оқушының өз оқу әрекеті мен нәтижесін саналы талдауына мүмкіндік беру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b5_0" value="b">
+          оқушының өз қатесін түсінбеуіне жағдай жасау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b5_0" value="c">
+          оқу нәтижесін талдаусыз аяқтау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b5_0" value="d">
+          оқушының пікірін сабақтан шығару
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b5_0" value="e">
+          келесі әрекетті жоспарламау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: рефлексия оқушының өз оқу әрекеті мен нәтижесін саналы талдауына мүмкіндік береді. Әлімов еңбегінде рефлексия мен кері байланыс интербелсенді оқудың маңызды бөлігі ретінде берілген. Дерек: Әлімов А.Қ., 2014, 72–78-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Кері байланыстың интербелсенді сабақтағы мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b5_1" value="a">
+          оқушыға қатесін, ілгерілеуін және келесі қадамын түсінуге көмектесу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b5_1" value="b">
+          оқушы жауабын түсіндірмей өткізіп жіберу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b5_1" value="c">
+          қате жауапты талдаусыз қабылдау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b5_1" value="d">
+          оқушының өз жұмысын түзетуін шектеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b5_1" value="e">
+          бағалауды оқу мақсатынан бөлу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: кері байланыс оқушыға қатесін, ілгерілеуін және келесі қадамын түсінуге көмектеседі. Кітапта кері байланыс тәсілдері жеке бөлімде қарастырылады. Дерек: Әлімов А.Қ., 2014, 78–85-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Рефлексия кезінде оқушы талдайтын негізгі мәселелер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b5_2" value="a">
+          нені түсінгенін
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b5_2" value="b">
+          қандай қиындық болғанын
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b5_2" value="c">
+          келесіде нені жақсартатынын
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b5_2" value="d">
+          өз жетістігін
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b5_2" value="e">
+          тапсырма орындау жолын
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b5_2" value="f">
+          өз қатесін елемеуді
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b5_2" value="g">
+          сабақ мақсатын ұмытуды
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b5_2" value="h">
+          басқа пікірді тыңдамауды
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: нені түсінгенін, қандай қиындық болғанын, келесіде нені жақсартатынын. Рефлексия оқушыны өз оқу тәжірибесін талдауға және келесі әрекетін жоспарлауға үйретеді. Дерек: Әлімов А.Қ., 2014, 72–78-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Бағалау оқу сапасын жақсарту үшін қандай әрекеттермен байланысады?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b5_3" value="a">
+          бағалау өлшемін түсіндіру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b5_3" value="b">
+          өзін-өзі бағалау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b5_3" value="c">
+          өзара бағалау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b5_3" value="d">
+          кері байланыс беру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b5_3" value="e">
+          нәтижені талдау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b5_3" value="f">
+          бағаны себепсіз қою
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b5_3" value="g">
+          оқушы жауабын елемеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: бағалау өлшемін түсіндіру және өзін-өзі бағалау. Әлімов еңбегінде бағалау оқушының оқу нәтижесін түсінуімен, кері байланыспен және рефлексиямен байланысты қарастырылады. Дерек: Әлімов А.Қ., 2014, 95–97-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b5_4" value="a">
+          рефлексия, кері байланыс және бағалау оқушының оқу нәтижесін саналы жақсартуға көмектеседі
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b5_4" value="b">
+          рефлексия оқушының оқу нәтижесіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b5_4" value="c">
+          кері байланыс қатені түзетуге көмектеспейді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b5_4" value="d">
+          бағалау тек баға қоюмен шектеледі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b5_4" value="e">
+          өзін-өзі бағалау интербелсенді сабаққа қажет емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: рефлексия, кері байланыс және бағалау оқушының оқу нәтижесін саналы жақсартуға көмектеседі. Бұл бөлімдер оқушының өз әрекетін түсінуіне және келесі оқу қадамын анықтауына бағытталған. Дерек: Әлімов А.Қ., 2014, 72–97-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b5')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b5')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b5_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b6">
+    <div class="blockhead">
+      <h2>Оқу мақсаттары, Блум таксономиясы және сабақ құрылымы</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде интербелсенді оқуда оқу мақсаттарын айқындау, Блум таксономиясының танымдық деңгейлері, сабақ құрылымы, сабақ кезеңдерін проблемамен байланыстыру және нәтижеге бағытталған оқу әрекетін ұйымдастыру қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Интербелсенді сабақ нақты оқу мақсатынан басталады. Оқу мақсаты оқушының сабақ соңында қандай әрекет жасай алатынын, қандай білімді қолданатынын және қандай нәтиже көрсететінін анықтайды. Блум таксономиясы оқу тапсырмаларын танымдық деңгейлер бойынша құруға көмектеседі: білу, түсіну, қолдану, талдау, жинақтау және бағалау. Сабақ құрылымы оқушыны мәселені түсінуге, шешім іздеуге, дәлелдеуге, қолдануға және қорытынды жасауға бағыттайды. Сондықтан сабақ кезеңдері мақсатпен, тапсырмамен және бағалау өлшемімен бірлікте ұйымдастырылуы керек.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>оқу мақсаты:</b> сабақ соңында оқушы қол жеткізетін нақты нәтиже</div>
+  
+    <div class="key"><b>Блум таксономиясы:</b> танымдық әрекеттерді деңгейлеп ұйымдастыру жүйесі</div>
+  
+    <div class="key"><b>білу:</b> ақпаратты еске түсіру және тану деңгейі</div>
+  
+    <div class="key"><b>қолдану:</b> білімді нақты тапсырмада пайдалану деңгейі</div>
+  
+    <div class="key"><b>талдау:</b> ақпаратты бөліктерге ажыратып, байланысын анықтау деңгейі</div>
+  
+    <div class="key"><b>сабақ құрылымы:</b> сабақ кезеңдерінің мақсатқа сай жүйелі ұйымдасуы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Оқу мақсатының негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b6_0" value="a">
+          сабақ соңында оқушы қол жеткізетін нақты нәтижені анықтау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b6_0" value="b">
+          тапсырманы оқу нәтижесінен бөлек беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b6_0" value="c">
+          оқушы әрекетін жоспардан шығару
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b6_0" value="d">
+          бағалау өлшемін қажетсіз ету
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b6_0" value="e">
+          сабақ кезеңдерін мақсатсыз құру
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: оқу мақсаты сабақ соңында оқушы қол жеткізетін нақты нәтижені анықтайды. Әлімов еңбегінде оқу мақсаттарын айқындау мәселесі интербелсенді оқуды ұйымдастырудың маңызды бөлігі ретінде берілген. Дерек: Әлімов А.Қ., 2014, 85–92-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Блум таксономиясының сабақтағы әдістемелік қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b6_1" value="a">
+          оқу тапсырмаларын танымдық деңгейлер бойынша ұйымдастыруға көмектесу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b6_1" value="b">
+          оқушы әрекетін тек жаттаумен шектеу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b6_1" value="c">
+          сабақ мақсатын бағалаудан ажырату
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b6_1" value="d">
+          талдау мен бағалауды тапсырмадан шығару
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b6_1" value="e">
+          оқу нәтижесін анықтамау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: Блум таксономиясы оқу тапсырмаларын танымдық деңгейлер бойынша ұйымдастыруға көмектеседі. Кітапта Блум таксономиясының танымдық деңгейлері жеке бөлімде көрсетілген. Дерек: Әлімов А.Қ., 2014, 92–95-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Блум таксономиясына сәйкес жоғары танымдық әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b6_2" value="a">
+          талдау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b6_2" value="b">
+          жинақтау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b6_2" value="c">
+          бағалау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b6_2" value="d">
+          қолдану
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b6_2" value="e">
+          түсіну
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b6_2" value="f">
+          механикалық көшіру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b6_2" value="g">
+          жауапты дәлелсіз қабылдау
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b6_2" value="h">
+          оқушы ойын шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: талдау, жинақтау, бағалау. Бұл әрекеттер оқушының ақпаратты терең өңдеуіне, байланысын табуына және өз қорытындысын жасауына мүмкіндік береді. Дерек: Әлімов А.Қ., 2014, 92–95-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Сабақ құрылымын нәтижелі ұйымдастыру үшін қажет бөліктер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b6_3" value="a">
+          оқу мақсаты
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b6_3" value="b">
+          тапсырма жүйесі
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b6_3" value="c">
+          бағалау өлшемі
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b6_3" value="d">
+          кері байланыс
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b6_3" value="e">
+          рефлексия
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b6_3" value="f">
+          мақсатсыз тапсырма
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b6_3" value="g">
+          оқушы әрекетін шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: оқу мақсаты және тапсырма жүйесі. Сабақ құрылымы мақсатпен, тапсырмамен, бағалаумен және кері байланыспен байланысқанда нәтижелі болады. Дерек: Әлімов А.Қ., 2014, 112–117-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b6_4" value="a">
+          оқу мақсаты, танымдық деңгей және сабақ құрылымы бір жүйеде ұйымдастырылғанда оқу нәтижесі айқындалады
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b6_4" value="b">
+          оқу мақсаты сабақ нәтижесіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b6_4" value="c">
+          Блум таксономиясы тапсырма құрауға қатыспайды
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b6_4" value="d">
+          сабақ құрылымы проблемамен байланыспауы керек
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b6_4" value="e">
+          бағалау өлшемі оқушыға түсіндірілмейді
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: оқу мақсаты, танымдық деңгей және сабақ құрылымы бір жүйеде ұйымдастырылғанда оқу нәтижесі айқын болады. Бұл интербелсенді сабақта мақсат, әрекет және нәтиже байланысын сақтауға көмектеседі. Дерек: Әлімов А.Қ., 2014, 85–117-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b6')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b6')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b6_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b7">
+    <div class="blockhead">
+      <h2>Интербелсенді әдістер және оларды сабақта қолдану</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде интербелсенді әдістердің сабақтағы орны, оқушыны белсенді әрекетке енгізу, мәселені анықтау, талқылау, шешім ұсыну және оқу нәтижесін бекіту жолдары қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Интербелсенді әдістер оқушыны дайын ақпаратты қабылдаушы емес, оқу әрекетіне белсенді қатысушы ретінде қалыптастырады. Мұндай әдістер сабақта мәселені анықтау, пікір алмасу, топтық талқылау, дәлелдеу, шешім ұсыну және қорытынды жасау арқылы жүзеге асады. Интербелсенді әдістің тиімділігі оқушының өз ойын айтуына, басқа пікірді тыңдауына, дәлел келтіруіне және ортақ шешімге келуіне байланысты. Мұғалім әдісті сабақ мақсатына, оқушы деңгейіне, тапсырма мазмұнына және күтілетін нәтижеге сай таңдайды.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>интербелсенді әдіс:</b> оқушыны белсенді әрекетке, өзара байланысқа және талқылауға енгізетін оқыту тәсілі</div>
+  
+    <div class="key"><b>мәселені анықтау:</b> оқушының тапсырмадағы негізгі сұрақты немесе қиындықты табуы</div>
+  
+    <div class="key"><b>талқылау:</b> оқушылардың пікір алмасып, ойды нақтылауы</div>
+  
+    <div class="key"><b>шешім ұсыну:</b> мәселе бойынша дәлелді жауап немесе әрекет жолын көрсету</div>
+  
+    <div class="key"><b>ортақ қорытынды:</b> топтық талқылаудан кейін келісілген негізгі тұжырым</div>
+  
+    <div class="key"><b>әдісті таңдау:</b> сабақ мақсатына сай тиімді жұмыс түрін белгілеу</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Интербелсенді әдістің негізгі мақсаты</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b7_0" value="a">
+          оқушыны белсенді әрекетке және өзара талқылауға енгізу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b7_0" value="b">
+          оқушыны сабақта үнсіз тыңдаушы ретінде қалдыру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b7_0" value="c">
+          тапсырманы оқушы әрекетінсіз орындау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b7_0" value="d">
+          оқушы пікірін сабақтан шығару
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b7_0" value="e">
+          мәселені талқыламай аяқтау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді әдіс оқушыны белсенді әрекетке және өзара талқылауға енгізеді. Әлімов еңбегінде интербелсенді әдістер сабақтағы белсенді оқу әрекетін ұйымдастыру құралы ретінде беріледі. Дерек: Әлімов А.Қ., 2014, 120–137-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Интербелсенді әдісті таңдауда мұғалім нені ескеруі керек?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b7_1" value="a">
+          сабақ мақсаты, оқушы деңгейі және күтілетін нәтиже
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b7_1" value="b">
+          тапсырманың кездейсоқ алынуын
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b7_1" value="c">
+          оқушы әрекетінің шектелуін
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b7_1" value="d">
+          талқылаудың мүлде болмауын
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b7_1" value="e">
+          бағалау өлшемінің түсіндірілмеуін
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: мұғалім сабақ мақсатын, оқушы деңгейін және күтілетін нәтижені ескеруі керек. Интербелсенді әдіс мақсатпен, тапсырмамен және нәтижемен байланыста таңдалады. Дерек: Әлімов А.Қ., 2014, 120–137-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Интербелсенді әдістер арқылы жүзеге асатын әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b7_2" value="a">
+          мәселені анықтау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b7_2" value="b">
+          пікір алмасу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b7_2" value="c">
+          шешім ұсыну
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b7_2" value="d">
+          дәлел келтіру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b7_2" value="e">
+          ортақ қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b7_2" value="f">
+          оқушыны үнсіз қалдыру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b7_2" value="g">
+          талқылауды тоқтату
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b7_2" value="h">
+          жауапты себепсіз қабылдау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: мәселені анықтау, пікір алмасу, шешім ұсыну. Интербелсенді әдістер оқушыны мәселені түсінуге, талқылауға және шешім жасауға бағыттайды. Дерек: Әлімов А.Қ., 2014, 120–148-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Интербелсенді әдістің нәтижелі болуына әсер ететін шарттар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b7_3" value="a">
+          тапсырманың нақты болуы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b7_3" value="b">
+          оқушының белсенді қатысуы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b7_3" value="c">
+          пікір алмасуға мүмкіндік берілуі
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b7_3" value="d">
+          оқушы жауабын ескермеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b7_3" value="e">
+          топтық жұмысты шектеу
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b7_3" value="f">
+          қорытынды жасамау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b7_3" value="g">
+          оқу мақсатын жасырын қалдыру
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: тапсырманың нақты болуы және оқушының белсенді қатысуы. Интербелсенді әдіс нақты мақсат пен белсенді әрекетке сүйенгенде нәтижелі болады. Дерек: Әлімов А.Қ., 2014, 120–137-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b7_4" value="a">
+          интербелсенді әдістер оқушыны мәселені талдап, пікірлесіп, шешім ұсынуға үйретеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b7_4" value="b">
+          интербелсенді әдістер оқушы әрекетін шектейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b7_4" value="c">
+          интербелсенді сабақта талқылау қажет емес
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b7_4" value="d">
+          әдісті сабақ мақсатына байланыстырмай таңдау керек
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b7_4" value="e">
+          оқушының пікірі оқу нәтижесіне әсер етпейді
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді әдістер оқушыны мәселені талдап, пікірлесіп, шешім ұсынуға үйретеді. Бұл әдістер сабақта белсенді оқу әрекетін ұйымдастыруға бағытталған. Дерек: Әлімов А.Қ., 2014, 120–148-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b7')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b7')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b7_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b8">
+    <div class="blockhead">
+      <h2>Проблеманы айқындау, шешу және шешімді қолдану тәсілдері</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде проблеманы айқындау кезеңі, проблеманы шешу кезеңі, шешімді қолдану кезеңі және осы кезеңдерде пайдаланылатын интербелсенді тәсілдер қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Интербелсенді сабақта проблемамен жұмыс бірнеше кезең арқылы жүзеге асады. Алдымен оқушы мәселені айқындайды, негізгі сұрақты түсінеді, бастапқы болжам жасайды. Кейін проблеманы шешу кезеңінде дерек іздейді, пікір алмасады, дәлел келтіреді, шешім нұсқаларын салыстырады. Соңында шешімді қолдану кезеңінде алынған білімді жаңа жағдаятта пайдаланады, қорытынды жасайды және өз әрекетін бағалайды. Мұндай жұмыс оқушының сыни ойлауын, дәлелдеуін, өздік шешім қабылдауын және практикалық қолданымын дамытады.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>проблеманы айқындау:</b> тапсырмадағы негізгі мәселені, сұрақты немесе қайшылықты анықтау</div>
+  
+    <div class="key"><b>проблеманы шешу:</b> мәселе бойынша дәлел іздеп, шешім нұсқасын ұсыну</div>
+  
+    <div class="key"><b>шешімді қолдану:</b> табылған жауапты жаңа жағдаятта пайдалану</div>
+  
+    <div class="key"><b>болжам жасау:</b> мәселенің ықтимал жауабын алдын ала ұсыну</div>
+  
+    <div class="key"><b>дәлел іздеу:</b> жауапты негіздейтін дерек, мысал немесе себеп табу</div>
+  
+    <div class="key"><b>қолданым:</b> білімді нақты тапсырмада немесе өмірлік жағдайда пайдалану</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Проблеманы айқындау кезеңінің негізгі мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b8_0" value="a">
+          тапсырмадағы негізгі мәселені немесе сұрақты анықтау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b8_0" value="b">
+          жауапты дәлелсіз бірден қабылдау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b8_0" value="c">
+          мәселені талқыламай өткізу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b8_0" value="d">
+          оқушы болжамын шектеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b8_0" value="e">
+          тапсырманы мақсатсыз аяқтау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: проблеманы айқындау кезеңінде негізгі мәселе немесе сұрақ анықталады. Әлімов еңбегінде проблеманы айқындау кезеңінде қолданылатын тәсілдер жеке бөлім ретінде берілген. Дерек: Әлімов А.Қ., 2014, 137–143-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Проблеманы шешу кезеңінде оқушы қандай әрекет орындайды?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b8_1" value="a">
+          дерек іздеп, дәлел келтіріп, шешім нұсқасын ұсынады
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b8_1" value="b">
+          тапсырманы ойланбай көшіреді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b8_1" value="c">
+          мәселені түсінбей жауап береді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b8_1" value="d">
+          басқа пікірді тыңдамайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b8_1" value="e">
+          қорытынды жасамай тоқтайды
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: проблеманы шешу кезеңінде оқушы дерек іздеп, дәлел келтіріп, шешім нұсқасын ұсынады. Бұл кезеңде мәселе талданып, шешім жолдары қарастырылады. Дерек: Әлімов А.Қ., 2014, 143–148-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Проблемамен жұмыс істеудің негізгі кезеңдері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b8_2" value="a">
+          проблеманы айқындау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b8_2" value="b">
+          проблеманы шешу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b8_2" value="c">
+          шешімді қолдану
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b8_2" value="d">
+          нәтижені талдау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b8_2" value="e">
+          қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b8_2" value="f">
+          мәселені елемеу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b8_2" value="g">
+          жауапты дәлелсіз көшіру
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b8_2" value="h">
+          оқушы пікірін тоқтату
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: проблеманы айқындау, проблеманы шешу, шешімді қолдану. Әлімов кітабында бұл кезеңдер интербелсенді тәсілдерді сабақта қолдану жүйесі ретінде берілген. Дерек: Әлімов А.Қ., 2014, 137–148-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Проблеманы шешу барысында қажет болатын әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b8_3" value="a">
+          дәлел іздеу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b8_3" value="b">
+          шешім нұсқасын ұсыну
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b8_3" value="c">
+          пікірді салыстыру
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b8_3" value="d">
+          дерекке сүйену
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b8_3" value="e">
+          қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b8_3" value="f">
+          мәселені түсіндірмей қалдыру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b8_3" value="g">
+          жауапты себепсіз қабылдау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: дәлел іздеу және шешім нұсқасын ұсыну. Проблеманы шешу оқушының дерекке сүйеніп, дәлелді жауап табуына бағытталады. Дерек: Әлімов А.Қ., 2014, 143–148-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b8_4" value="a">
+          проблемамен жұмыс оқушыны мәселені түсініп, дәлелдеп, шешімді қолдануға үйретеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b8_4" value="b">
+          проблемамен жұмыс дайын жауапты көшіруге негізделеді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b8_4" value="c">
+          проблеманы айқындау оқушы ойлауына әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b8_4" value="d">
+          шешімді қолдану оқу нәтижесіне қатыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b8_4" value="e">
+          дәлел іздеу проблемалық тапсырмада қажет емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: проблемамен жұмыс оқушыны мәселені түсініп, дәлелдеп, шешімді қолдануға үйретеді. Бұл интербелсенді сабақта сыни ойлау мен практикалық қолданымды дамытады. Дерек: Әлімов А.Қ., 2014, 137–148-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b8')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b8')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b8_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b9">
+    <div class="blockhead">
+      <h2>Жазу тәсілдері және ойды жүйелеу</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде интербелсенді оқуда жазу тәсілдерін қолдану, оқушы ойын жүйелеу, қысқа жазба жұмыс, дәлелді жауап, рефлексиялық жазу және жазылым арқылы ойлауды дамыту жолдары қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Жазу тәсілдері интербелсенді сабақта оқушының ойын жүйелеуге, түсінігін нақтылауға және өз пікірін дәлелдеп жеткізуге көмектеседі. Жазба жұмыс тек көшіріп жазу емес, ойлану, таңдау, дәлелдеу, салыстыру және қорытынды жасау әрекетімен байланысады. Оқушы қысқа жауап, пікір, эссе, кесте, жоспар, рефлексиялық жазба, сұрақ құрастыру сияқты тапсырмалар арқылы өз түсінігін көрсетеді. Жазу тәсілдері оқушының жеке ойлауын дамытып қана қоймай, кейінгі талқылау мен топтық жұмысқа негіз болады.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>жазу тәсілі:</b> оқушы ойын жазбаша түрде жүйелеуге арналған әдістемелік амал</div>
+  
+    <div class="key"><b>рефлексиялық жазу:</b> оқушының өз түсінігі, қиындығы және нәтижесі туралы жазуы</div>
+  
+    <div class="key"><b>дәлелді жауап:</b> пікірді себеп, мысал және қорытынды арқылы негіздеу</div>
+  
+    <div class="key"><b>жоспар құру:</b> ойды белгілі ретпен жүйелеу</div>
+  
+    <div class="key"><b>қысқа жазба:</b> оқушының негізгі ойын шағын мәтін арқылы жеткізуі</div>
+  
+    <div class="key"><b>жазылым арқылы ойлау:</b> жазу барысында ақпаратты талдау және қорытындылау әрекеті</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Жазу тәсілдерінің интербелсенді сабақтағы негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b9_0" value="a">
+          оқушының ойын жүйелеп, түсінігін жазбаша көрсетуіне көмектесу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b9_0" value="b">
+          оқушыға мәтінді түсінбей көшірту
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b9_0" value="c">
+          оқушының пікірін жазғызбау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b9_0" value="d">
+          талқылауды жазылымнан бөлу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b9_0" value="e">
+          жазба жұмысты мақсатсыз орындату
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: жазу тәсілдері оқушының ойын жүйелеп, түсінігін жазбаша көрсетуіне көмектеседі. Әлімов еңбегінде жазу тәсілдері интербелсенді әдістер қатарында жеке бөлім ретінде берілген. Дерек: Әлімов А.Қ., 2014, 156–161-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Рефлексиялық жазудың негізгі мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b9_1" value="a">
+          оқушының өз түсінігі мен оқу нәтижесін жазбаша талдауы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b9_1" value="b">
+          оқушының дайын мәтінді мағынасыз көшіруі
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b9_1" value="c">
+          оқу мақсатын түсіндірмей жазу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b9_1" value="d">
+          өз қатесін талдаудан бас тарту
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b9_1" value="e">
+          пікірді дәлелсіз қайталау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: рефлексиялық жазу оқушының өз түсінігі мен оқу нәтижесін жазбаша талдауына бағытталады. Бұл тәсіл рефлексия және кері байланыспен тығыз байланысты. Дерек: Әлімов А.Қ., 2014, 72–78, 156–161-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Жазу тәсілдері арқылы дамитын әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b9_2" value="a">
+          ойды жүйелеу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b9_2" value="b">
+          пікірді дәлелдеу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b9_2" value="c">
+          қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b9_2" value="d">
+          сұрақ құрастыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b9_2" value="e">
+          мәтінді жоспарлау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b9_2" value="f">
+          мағынасыз көшіру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b9_2" value="g">
+          жазба жауапты талдамау
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b9_2" value="h">
+          оқушы ойын шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: ойды жүйелеу, пікірді дәлелдеу, қорытынды жасау. Жазу тәсілдері оқушыны тек жазуға емес, ойды өңдеуге және дәлелдеуге үйретеді. Дерек: Әлімов А.Қ., 2014, 156–161-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Интербелсенді сабақта қолданылатын жазба жұмыс түрлері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b9_3" value="a">
+          қысқа пікір жазу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b9_3" value="b">
+          жоспар құру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b9_3" value="c">
+          рефлексиялық жазба жазу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b9_3" value="d">
+          сұрақ құрастыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b9_3" value="e">
+          дәлелді жауап жазу
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b9_3" value="f">
+          мәтінді түсінбей көшіру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b9_3" value="g">
+          оқушы жауабын елемеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: қысқа пікір жазу және жоспар құру. Бұл жазба жұмыс түрлері оқушының ойын жүйелеуге және сабақтағы талқылауға дайындалуына көмектеседі. Дерек: Әлімов А.Қ., 2014, 156–161-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b9_4" value="a">
+          жазу тәсілдері оқушының ойлауын, дәлелдеуін және рефлексиясын дамытады
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b9_4" value="b">
+          жазу тәсілдері тек көшіріп жазуға негізделеді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b9_4" value="c">
+          рефлексиялық жазу оқу нәтижесіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b9_4" value="d">
+          жоспар құру ойды жүйелеуге көмектеспейді
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b9_4" value="e">
+          дәлелді жауап интербелсенді сабаққа қажет емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: жазу тәсілдері оқушының ойлауын, дәлелдеуін және рефлексиясын дамытады. Интербелсенді сабақта жазылым талқылау мен қорытынды жасауға негіз болады. Дерек: Әлімов А.Қ., 2014, 156–161-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b9')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b9')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b9_result"></div>
+    </div>
+  </section>
+   <section class="block" id="b10">
+    <div class="blockhead">
+      <h2>Ойсергектер және топқа бөлу тәсілдері</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде ойсергектердің сабақтағы қызметі, танысу ойсергектері, жағымды психологиялық ахуал қалыптастыру, логикалық ойлау тапсырмалары, психологиялық тест түріндегі ойсергектер және топқа бөлу тәсілдері қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Ойсергектер интербелсенді сабақта оқушының назарын сабаққа аударуға, жағымды психологиялық орта қалыптастыруға, топ мүшелерін жақындастыруға және белсенді оқу әрекетіне дайындауға көмектеседі. Олар сабақтың мақсатына сай, қысқа, түсінікті және оқушылардың жас ерекшелігіне лайық болуы керек. Танысу ойсергектері оқушылардың бір-бірін тануына, психологиялық ахуал қалыптастыратын ойсергектер сенімді орта жасауға, логикалық ойсергектер ойлау белсенділігін арттыруға бағытталады. Топқа бөлу тәсілдері оқушыларды бірлескен жұмысқа ұйымдастырып, сабақтағы өзара әрекетті күшейтеді.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>ойсергек:</b> оқушыны белсенді оқу әрекетіне дайындайтын қысқа тапсырма</div>
+  
+    <div class="key"><b>танысу ойсергегі:</b> оқушылардың бір-бірін тануына көмектесетін жұмыс түрі</div>
+  
+    <div class="key"><b>психологиялық ахуал:</b> сыныптағы сенім, қолдау және еркін қатысу жағдайы</div>
+  
+    <div class="key"><b>логикалық ойсергек:</b> оқушының ойлау белсенділігін арттыратын қысқа тапсырма</div>
+  
+    <div class="key"><b>топқа бөлу тәсілі:</b> оқушыларды бірлескен жұмысқа ұйымдастыру амалы</div>
+  
+    <div class="key"><b>белсендіру:</b> оқушының назарын, қызығушылығын және әрекетін күшейту</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Ойсергектің негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b10_0" value="a">
+          оқушыны белсенді оқу әрекетіне дайындау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b10_0" value="b">
+          оқушыны сабақтан алыстату
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b10_0" value="c">
+          топтық жұмысты тоқтату
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b10_0" value="d">
+          оқушы қызығушылығын төмендету
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b10_0" value="e">
+          сабақ мақсатын жасыру
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: ойсергек оқушыны белсенді оқу әрекетіне дайындайды. Әлімов еңбегінде ойсергектер жеке бөлімде беріліп, олардың танысу, психологиялық ахуал, логикалық ойлау және топқа бөлу қызметтері көрсетіледі. Дерек: Әлімов А.Қ., 2014, 161–178-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Топқа бөлу тәсілдерінің сабақтағы мақсаты</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b10_1" value="a">
+          оқушыларды бірлескен жұмысқа ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b10_1" value="b">
+          оқушыларды өзара әрекеттен алыстату
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b10_1" value="c">
+          талқылауды сабақтан шығару
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b10_1" value="d">
+          ортақ тапсырманы қажетсіз ету
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b10_1" value="e">
+          оқушы жауапкершілігін азайту
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: топқа бөлу тәсілдері оқушыларды бірлескен жұмысқа ұйымдастыруға көмектеседі. Кітапта топтарға бөлу тәсілдері ойсергектер бөлімінің соңында жеке қарастырылады. Дерек: Әлімов А.Қ., 2014, 178–182-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Ойсергектердің негізгі түрлері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b10_2" value="a">
+          танысу ойсергектері
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b10_2" value="b">
+          жағымды психологиялық ахуал қалыптастыратын ойсергектер
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b10_2" value="c">
+          логикалық ойлауға негізделген ойсергектер
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b10_2" value="d">
+          психологиялық тест түріндегі ойсергектер
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b10_2" value="e">
+          топқа бөлу тәсілдері
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b10_2" value="f">
+          оқушыны үнсіз қалдыратын тапсырмалар
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b10_2" value="g">
+          сабақтан тыс кездейсоқ әрекеттер
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b10_2" value="h">
+          қызығушылықты төмендететін жұмыс
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: танысу ойсергектері, жағымды психологиялық ахуал қалыптастыратын ойсергектер, логикалық ойлауға негізделген ойсергектер. Бұл түрлер кітап мазмұнында жеке тақырыптар ретінде берілген. Дерек: Әлімов А.Қ., 2014, 161–174-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Ойсергекті таңдауда ескерілетін шарттар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b10_3" value="a">
+          сабақ мақсатына сай болуы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b10_3" value="b">
+          оқушы жасына сәйкес болуы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b10_3" value="c">
+          қысқа әрі түсінікті болуы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b10_3" value="d">
+          оқушыны белсендіруі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b10_3" value="e">
+          топтық әрекетке дайындауы
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b10_3" value="f">
+          мақсатсыз ұзақ болуы
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b10_3" value="g">
+          оқушыны ыңғайсыз жағдайға қалдыруы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: сабақ мақсатына сай болуы және оқушы жасына сәйкес болуы. Ойсергек оқу мақсатын қолдап, оқушыға түсінікті әрі қауіпсіз орта құруы керек. Дерек: Әлімов А.Қ., 2014, 161–178-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b10_4" value="a">
+          ойсергектер мен топқа бөлу тәсілдері сабақта белсенді орта құрып, бірлескен әрекетке дайындайды
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b10_4" value="b">
+          ойсергектер оқушы белсенділігіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b10_4" value="c">
+          топқа бөлу тәсілдері бірлескен жұмысты әлсіретеді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b10_4" value="d">
+          психологиялық ахуал сабақ нәтижесіне қатыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b10_4" value="e">
+          логикалық ойсергектер ойлау әрекетін дамытпайды
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: ойсергектер мен топқа бөлу тәсілдері белсенді орта құрып, оқушыларды бірлескен әрекетке дайындайды. Бұл интербелсенді сабақтың ұйымдастыру және психологиялық негізін күшейтеді. Дерек: Әлімов А.Қ., 2014, 161–182-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b10')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b10')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b10_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b11">
+    <div class="blockhead">
+      <h2>Әлімов еңбегі бойынша қорытынды аралас тест</h2>
+      <div class="meta">1-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл қорытынды бөлімде интербелсенді оқу, бірлескен әрекет, сыни ойлау, диалог, мотивация, топтық жұмыс, рефлексия, бағалау, сабақ құрылымы, жазу тәсілдері және ойсергектер бойынша негізгі ұғымдар жинақталады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Әлімов еңбегіндегі негізгі идея — оқу оқушының белсенді әрекеті, өзара байланысы, талқылауы, тәжірибесі және рефлексиясы арқылы нәтижелі болады. Интербелсенді әдістеме оқушыны білімді дайын күйінде қабылдаушы емес, оны өз әрекетімен құрастырушы тұлға ретінде таниды. Сабақта бірлескен әрекет, диалог, проблемалық тапсырма, сыни ойлау, мотивация, кері байланыс, бағалау және жазу тәсілдері бір жүйеде ұйымдастырылғанда оқушының танымдық, қатысымдық және рефлексиялық дағдылары дамиды.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>интербелсенді әдістеме:</b> өзара әрекет пен белсенді оқу әрекетіне негізделген оқыту жүйесі</div>
+  
+    <div class="key"><b>бірлескен әрекет:</b> оқушылардың ортақ мақсатқа жету үшін бірге жұмыс істеуі</div>
+  
+    <div class="key"><b>сыни ойлау:</b> ақпаратты талдау, салыстыру, дәлелдеу және бағалау қабілеті</div>
+  
+    <div class="key"><b>кері байланыс:</b> оқушының оқу әрекетін жақсартуға бағытталған жауап</div>
+  
+    <div class="key"><b>бағалау өлшемі:</b> оқу нәтижесін анықтайтын нақты талап</div>
+  
+    <div class="key"><b>сабақ құрылымы:</b> мақсат, тапсырма, әрекет, бағалау және рефлексияның жүйелі байланысы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Әлімов еңбегіндегі интербелсенді оқудың басты тірегі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b11_0" value="a">
+          оқушының өзара әрекет арқылы белсенді білім игеруі
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b11_0" value="b">
+          оқушының дайын ақпаратты үнсіз қабылдауы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b11_0" value="c">
+          сабақтың тек түсіндірумен аяқталуы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b11_0" value="d">
+          оқушы әрекетін бағалаудан бөлу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b11_0" value="e">
+          тапсырманы талқылаусыз орындау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді оқудың басты тірегі — оқушының өзара әрекет арқылы белсенді білім игеруі. Бұл идея кітаптың интербелсенді әдістеме және әрекет арқылы үйрену бөлімдерінде ашылады. Дерек: Әлімов А.Қ., 2014, 7–22-беттер.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Бірлескен әрекет оқушыда қандай дағдыны күшейтеді?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b11_1" value="a">
+          пікір алмасу, тыңдау және ортақ шешімге келу дағдысын
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b11_1" value="b">
+          сабақта мүлде сөйлемеу дағдысын
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b11_1" value="c">
+          өз ойын дәлелсіз қайталау дағдысын
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b11_1" value="d">
+          басқа пікірді елемеу дағдысын
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b11_1" value="e">
+          тапсырмадан бас тарту дағдысын
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: бірлескен әрекет пікір алмасу, тыңдау және ортақ шешімге келу дағдыларын күшейтеді. Кітапта бірлескен әрекет интербелсенді оқудың негізгі тірегі ретінде түсіндіріледі. Дерек: Әлімов А.Қ., 2014, 12–15-беттер.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Сыни ойлаудың сабақтағы әдістемелік мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b11_2" value="a">
+          оқушыны талдауға, дәлелдеуге және қорытынды жасауға үйрету
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b11_2" value="b">
+          оқушыны дайын жауапты жаттауға ғана бағыттау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b11_2" value="c">
+          оқушының өз пікірін айтуын шектеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b11_2" value="d">
+          дәлелдеу әрекетін сабақтан алып тастау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b11_2" value="e">
+          мәселені талдаусыз аяқтау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: сыни ойлау оқушыны талдауға, дәлелдеуге және қорытынды жасауға үйретеді. Әлімов еңбегінде сыни ойлау және оны сабақта қолдану жеке бөлімдерде қарастырылады. Дерек: Әлімов А.Қ., 2014, 34–41-беттер.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Интербелсенді сабақтың нәтижелі болуына әсер ететін негізгі шарттар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b11_3" value="a">
+          оқу мақсатының нақты болуы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b11_3" value="b">
+          оқушының белсенді қатысуы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b11_3" value="c">
+          кері байланыстың берілуі
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b11_3" value="d">
+          тапсырманың мақсатсыз болуы
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b11_3" value="e">
+          оқушы пікірінің ескерілмеуі
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b11_3" value="f">
+          бағалау өлшемінің түсіндірілмеуі
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b11_3" value="g">
+          рефлексияның қолданылмауы
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b11_3" value="h">
+          топтық жұмыстың тоқтатылуы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: оқу мақсатының нақты болуы, оқушының белсенді қатысуы, кері байланыстың берілуі. Интербелсенді сабақта мақсат, әрекет және кері байланыс бір жүйеде ұйымдастырылуы керек. Дерек: Әлімов А.Қ., 2014, 72–97, 112–117-беттер.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Проблемалық тапсырмамен жұмыс істеуге тән әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b11_4" value="a">
+          мәселені айқындау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b11_4" value="b">
+          дәлел іздеу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b11_4" value="c">
+          шешім ұсыну
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b11_4" value="d">
+          жауапты себепсіз қабылдау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b11_4" value="e">
+          мәселені талдамау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b11_4" value="f">
+          оқушы болжамын шектеу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b11_4" value="g">
+          қорытынды жасамау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: мәселені айқындау және дәлел іздеу. Проблемалық тапсырма оқушыны мәселені түсінуге, дәлел табуға және шешім ұсынуға бағыттайды. Дерек: Әлімов А.Қ., 2014, 137–148-беттер.</div>
+  </div>
+  <div class="q" data-q="5" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">6. Рефлексияның интербелсенді оқудағы орны</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b11_5" value="a">
+          оқушының өз оқу әрекеті мен нәтижесін саналы талдауына жағдай жасау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b11_5" value="b">
+          оқушының оқу нәтижесін түсінбеуіне ықпал ету
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b11_5" value="c">
+          оқу мақсатын оқушыдан жасыру
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b11_5" value="d">
+          қате жауапты талдаусыз қалдыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b11_5" value="e">
+          келесі қадамды жоспарламау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: рефлексия оқушының өз оқу әрекеті мен нәтижесін саналы талдауына жағдай жасайды. Әлімов еңбегінде рефлексия мен кері байланыс жеке бөлімдерде берілген. Дерек: Әлімов А.Қ., 2014, 72–85-беттер.</div>
+  </div>
+  <div class="q" data-q="6" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">7. Бағалау мен кері байланыстың ортақ қызметтері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b11_6" value="a">
+          оқу нәтижесін анықтау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b11_6" value="b">
+          қатені түзетуге бағыт беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b11_6" value="c">
+          келесі әрекетті жоспарлауға көмектесу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b11_6" value="d">
+          оқушы жұмысын себепсіз тоқтату
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b11_6" value="e">
+          бағаны түсіндірмей қою
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b11_6" value="f">
+          оқушы жетістігін елемеу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b11_6" value="g">
+          бағалау өлшемін жасырын қалдыру
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b11_6" value="h">
+          рефлексияны қажетсіз ету
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: оқу нәтижесін анықтау, қатені түзетуге бағыт беру, келесі әрекетті жоспарлауға көмектесу. Бағалау мен кері байланыс оқушының оқу сапасын жақсартуға бағытталады. Дерек: Әлімов А.Қ., 2014, 78–97-беттер.</div>
+  </div>
+  <div class="q" data-q="7" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">8. Ойсергектердің сабақтағы негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b11_7" value="a">
+          оқушыны белсенді оқу әрекетіне дайындау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b11_7" value="b">
+          оқушыны оқу әрекетінен алыстату
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b11_7" value="c">
+          оқушының қызығушылығын төмендету
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b11_7" value="d">
+          топтық әрекетті тоқтату
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b11_7" value="e">
+          сабақ мақсатын бұзу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: ойсергектер оқушыны белсенді оқу әрекетіне дайындайды. Кітапта ойсергектер, танысу ойсергектері, жағымды психологиялық ахуал қалыптастыратын ойсергектер және топқа бөлу тәсілдері жеке бөлімдерде берілген. Дерек: Әлімов А.Қ., 2014, 161–182-беттер.</div>
+  </div>
+  <div class="q" data-q="8" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">9. Әлімов еңбегі бойынша жалпы дұрыс тұжырым</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b11_8" value="a">
+          интербелсенді оқыту оқушы әрекеті, диалог, талқылау, бағалау және рефлексия бірлігіне сүйенеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b11_8" value="b">
+          интербелсенді оқытуда оқушы әрекеті маңызды емес
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b11_8" value="c">
+          диалог пен талқылау оқу нәтижесіне қатыспайды
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b11_8" value="d">
+          бағалау мен рефлексия сабақта қолданылмайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b11_8" value="e">
+          оқушы тек дайын жауапты қабылдауы керек
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді оқыту оқушы әрекеті, диалог, талқылау, бағалау және рефлексия бірлігіне сүйенеді. Бұл кітаптағы барлық негізгі бөлімдердің ортақ тұжырымы. Дерек: Әлімов А.Қ., 2014, 7–182-беттер.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b11')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b11')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b11_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b12">
+    <div class="blockhead">
+      <h2>Қазақ тілін оқытудың әдіснамалық негіздері</h2>
+      <div class="meta">2-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде қазақ тілін оқыту әдістемесінің ғылыми негізі, оқыту мақсаты, мазмұны, әдісі, нәтижесі және әдістемелік жүйенің өзара байланысы қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Қазақ тілін оқытудың әдіснамалық негіздері оқыту үдерісін ғылыми тұрғыдан түсіндіруге мүмкіндік береді. Әдіснама оқытудың не үшін, нені, қалай және қандай нәтиже үшін ұйымдастырылатынын анықтайды. Қазақ тілін оқытуда әдіснамалық негіз лингвистикалық, педагогикалық, психологиялық, дидактикалық және қатысымдық тіректермен байланысады. Мұғалім тілдік материалды оқушының танымдық әрекетімен, сөйлеу дағдысымен, практикалық қолданымымен және бағалау нәтижесімен бірлікте ұйымдастырғанда әдістемелік жүйе нәтижелі болады.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>әдіснама:</b> оқыту үдерісінің ғылыми негізін, ұстанымын және зерттеу бағытын анықтайтын жүйе</div>
+  
+    <div class="key"><b>әдіснамалық негіз:</b> мақсат, мазмұн, әдіс, құрал және нәтижені ғылыми тұрғыдан байланыстыратын тірек</div>
+  
+    <div class="key"><b>оқыту мақсаты:</b> оқушыда қалыптасатын күтілетін білім, дағды және құзыреттілік</div>
+  
+    <div class="key"><b>оқыту мазмұны:</b> меңгерілетін тілдік материал, әрекет түрлері және оқу тапсырмалары</div>
+  
+    <div class="key"><b>әдістемелік жүйе:</b> мақсат, мазмұн, әдіс, форма, құрал және бағалаудың өзара байланысы</div>
+  
+    <div class="key"><b>практикалық қолданым:</b> тілдік білімді сөйлеу, жазу және қатысымдық әрекетте пайдалану</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Қазақ тілін оқытудың әдіснамалық негізі нені анықтайды?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b12_0" value="a">
+          оқыту мақсаты, мазмұны, әдісі және нәтижесінің ғылыми байланысын
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b12_0" value="b">
+          тілдік материалды сөйлеу әрекетінен бөлек жаттау тәртібін
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b12_0" value="c">
+          оқушының тілдік дағдысын бағалаусыз қалдыру жолын
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b12_0" value="d">
+          сабақ мазмұнын практикалық қолданымнан ажырату бағытын
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b12_0" value="e">
+          мәтінді оқушы әрекетінсіз түсіндіру тәсілін
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: әдіснамалық негіз оқыту мақсаты, мазмұны, әдісі және нәтижесінің ғылыми байланысын анықтайды. Бұл бөлімде материал Құрманова еңбегі толық табылмағандықтан, бұрынғы дайын құрылымдағы дерек пен силлабустың әдіснамалық тақырыптары бойынша жүйеленді.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Әдістемелік жүйенің дұрыс құрылуын көрсететін белгі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b12_1" value="a">
+          мақсат, мазмұн, әдіс, тапсырма және бағалаудың өзара байланыста берілуі
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b12_1" value="b">
+          мақсаттың мазмұннан және бағалаудан бөлек жоспарлануы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b12_1" value="c">
+          әдістің оқушы әрекетінсіз таңдалуы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b12_1" value="d">
+          тілдік материалдың практикалық қолданымсыз берілуі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b12_1" value="e">
+          бағалаудың оқу нәтижесіне қатыстырылмауы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: әдістемелік жүйе мақсат, мазмұн, әдіс, тапсырма және бағалау бірлігінде құрылғанда нәтижелі болады. Қазақ тілін оқытуда бұл байланыс сабақтың ғылыми және практикалық бағытын анықтайды.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Қазақ тілін оқытудың әдіснамалық тіректеріне жататын бағыттар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b12_2" value="a">
+          лингвистикалық негіз
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b12_2" value="b">
+          педагогикалық негіз
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b12_2" value="c">
+          психологиялық негіз
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b12_2" value="d">
+          дидактикалық негіз
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b12_2" value="e">
+          қатысымдық негіз
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b12_2" value="f">
+          әдістемелік негіз
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b12_2" value="g">
+          бағалау негізі
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b12_2" value="h">
+          ұйымдастыру негізі
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: лингвистикалық негіз, педагогикалық негіз, психологиялық негіз. Қазақ тілін оқыту әдіснамасы тіл біліміне, педагогикаға және оқушының психологиялық ерекшеліктеріне сүйенеді.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Әдіснамалық талдауда ескерілетін негізгі сұрақтар</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b12_3" value="a">
+          не үшін оқыту керек
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b12_3" value="b">
+          нені оқыту керек
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b12_3" value="c">
+          қалай оқыту керек
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b12_3" value="d">
+          қандай нәтиже күтіледі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b12_3" value="e">
+          қалай бағаланады
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b12_3" value="f">
+          қандай тапсырма беріледі
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b12_3" value="g">
+          оқушы қайда отырады
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: не үшін оқыту керек және нені оқыту керек. Әдіснамалық талдау алдымен оқыту мақсаты мен мазмұнын анықтаудан басталады.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b12_4" value="a">
+          әдіснамалық негіз оқыту жүйесін мақсат, мазмұн, әдіс және нәтиже бірлігінде қарастырады
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b12_4" value="b">
+          әдіснамалық негіз сабақ мақсатын оқу нәтижесінен бөледі
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b12_4" value="c">
+          әдістемелік жүйе бағалаумен байланыспайды
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b12_4" value="d">
+          оқыту мазмұны оқушы әрекетінсіз құрылады
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b12_4" value="e">
+          практикалық қолданым қазақ тілін оқытуда қажет емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: әдіснамалық негіз оқыту жүйесін мақсат, мазмұн, әдіс және нәтиже бірлігінде қарастырады. Бұл қазақ тілін оқыту әдістемесінің ғылыми сипатын айқындайды.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b12')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b12')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b12_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b13">
+    <div class="blockhead">
+      <h2>Модульдік оқытудың теориялық негізі</h2>
+      <div class="meta">3-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде қазақ тілін модуль арқылы үйрету, модульдік құрылым, оқу материалының жүйеленуі, мақсатқа бағытталған тапсырма және кезеңдік меңгерту мәселелері қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Модульдік оқыту оқу материалын белгілі бір мақсатқа, мазмұндық тұтастыққа және нәтижеге негіздеп ұйымдастырады. Қазақ тілін модуль арқылы үйретуде тілдік материал жеке-жеке шашыраңқы берілмей, бір тақырыптық-мазмұндық жүйе ретінде қарастырылады. Модуль құрылымында кіріспе, мазмұнды меңгерту, жаттығу, бекіту, бақылау және бағалау кезеңдері өзара байланысады. Бұл жүйе оқушының өздік әрекетін, деңгейлік тапсырма орындауын, қайталау мен бекітуді, тілдік дағдыны біртіндеп қалыптастыруды күшейтеді.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>модульдік оқыту:</b> оқу материалын мақсат, мазмұн және нәтиже бірлігімен ұйымдастыратын технология</div>
+  
+    <div class="key"><b>модуль:</b> белгілі бір тақырыптық-мазмұндық тұтастыққа құрылған оқу бірлігі</div>
+  
+    <div class="key"><b>модуль құрылымы:</b> кіріспе, меңгерту, жаттығу, бекіту, бақылау және бағалау кезеңдерінің жүйесі</div>
+  
+    <div class="key"><b>деңгейлік тапсырма:</b> оқушының дайындық деңгейіне сай сараланған тапсырма</div>
+  
+    <div class="key"><b>өздік әрекет:</b> оқушының оқу мақсатына жету үшін дербес орындайтын танымдық әрекеті</div>
+  
+    <div class="key"><b>кезеңдік меңгерту:</b> оқу материалын бірізді қадамдар арқылы меңгерту тәсілі</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Модульдік оқытудың негізгі сипаты</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b13_0" value="a">
+          оқу материалын мақсат, мазмұн және нәтиже бірлігімен ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b13_0" value="b">
+          оқу материалын байланыссыз тақырыптар тізімі ретінде беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b13_0" value="c">
+          оқушы әрекетін сабақ құрылымынан бөлек қарастыру
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b13_0" value="d">
+          бағалауды оқу нәтижесінен ажырату
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b13_0" value="e">
+          жаттығуды мақсатсыз қайталау ретінде қолдану
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модульдік оқыту оқу материалын мақсат, мазмұн және нәтиже бірлігімен ұйымдастырады. Жақсылықова еңбегі толық табылмағандықтан, бөлім бұрынғы дайын құрылымдағы негізгі мазмұн бойынша қайта жасалды.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Қазақ тілін модуль арқылы үйретудің әдістемелік артықшылығы</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b13_1" value="a">
+          тілдік материалды тақырыптық-мазмұндық жүйе ретінде меңгерту
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b13_1" value="b">
+          тілдік материалды сөйлеу әрекетінсіз жеке ереже ретінде беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b13_1" value="c">
+          оқушының өздік әрекетін қолданбау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b13_1" value="d">
+          деңгейлік тапсырманы оқу мазмұнынан шығару
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b13_1" value="e">
+          бекітуді бақылаумен байланыстырмау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модульдік оқыту тілдік материалды тақырыптық-мазмұндық жүйе ретінде меңгертуге мүмкіндік береді. Бұл оқушының материалды бірізді қабылдауына көмектеседі.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Модуль құрылымына тән негізгі кезеңдер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b13_2" value="a">
+          кіріспе кезең
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b13_2" value="b">
+          мазмұнды меңгерту
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b13_2" value="c">
+          жаттығу және бекіту
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b13_2" value="d">
+          бақылау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b13_2" value="e">
+          бағалау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b13_2" value="f">
+          қорытындылау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b13_2" value="g">
+          оқушы әрекетін тоқтату
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b13_2" value="h">
+          нәтижені елемеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: кіріспе кезең, мазмұнды меңгерту, жаттығу және бекіту. Модуль құрылымы оқу материалын кезең-кезеңімен меңгертуге негізделеді.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Модульдік оқытуда күшейтілетін оқушы әрекеттері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b13_3" value="a">
+          өздік жұмыс
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b13_3" value="b">
+          деңгейлік тапсырма орындау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b13_3" value="c">
+          тілдік материалды бекіту
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b13_3" value="d">
+          қайталау арқылы жүйелеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b13_3" value="e">
+          нәтижені бақылау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b13_3" value="f">
+          қолданымдық тапсырма орындау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b13_3" value="g">
+          оқушы белсенділігін шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: өздік жұмыс және деңгейлік тапсырма орындау. Модульдік оқыту оқушының дербес оқу әрекетін және деңгейіне сай жұмыс істеуін күшейтеді.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b13_4" value="a">
+          модульдік оқыту оқу материалын мақсатты, жүйелі және кезеңдік түрде меңгертеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b13_4" value="b">
+          модульдік оқыту оқу материалын ретсіз беруге негізделеді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b13_4" value="c">
+          модуль құрылымы бақылау мен бағалауды қажет етпейді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b13_4" value="d">
+          деңгейлік тапсырма модульдік оқытуға қатыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b13_4" value="e">
+          өздік әрекет модульдік жүйеде қолданылмайды
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модульдік оқыту оқу материалын мақсатты, жүйелі және кезеңдік түрде меңгертеді. Бұл қазақ тілін оқытуда материалды біртұтас меңгертуге жағдай жасайды.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b13')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b13')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b13_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b14">
+    <div class="blockhead">
+      <h2>Оқыту мақсаты, мазмұны және практикалық қолданым</h2>
+      <div class="meta">2-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде қазақ тілін оқытудағы мақсат қою, оқу мазмұнын таңдау, тілдік материалды оқушы әрекетімен байланыстыру және практикалық қолданымға бағыттау мәселелері қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Қазақ тілін оқытуда мақсат, мазмұн және нәтиже өзара тығыз байланыста ұйымдастырылады. Оқыту мақсаты оқушыда қандай білім, дағды және құзыреттілік қалыптасатынын анықтайды. Оқыту мазмұны осы мақсатқа сай тілдік материалды, сөйлеу әрекетін, жаттығулар жүйесін және бағалау өлшемдерін қамтиды. Практикалық қолданым тілдік білімді нақты сөйлеу, жазу, тыңдау, оқу және қарым-қатынас жағдайында пайдалану арқылы көрінеді. Сондықтан мұғалім тілдік ережені оқушы әрекетінен бөлек емес, қолданымдық тапсырмалармен байланыстыра меңгертеді.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>оқыту мақсаты:</b> оқушыда қалыптасатын білім, дағды және құзыреттілікті анықтайтын бағдар</div>
+  
+    <div class="key"><b>оқыту мазмұны:</b> мақсатқа сай таңдалған тілдік материал мен оқу әрекеттерінің жүйесі</div>
+  
+    <div class="key"><b>практикалық қолданым:</b> тілдік білімді нақты қатысымдық әрекетте пайдалану</div>
+  
+    <div class="key"><b>қатысымдық бағыт:</b> тілді қарым-қатынас құралы ретінде меңгерту бағыты</div>
+  
+    <div class="key"><b>тілдік дағды:</b> тыңдау, айту, оқу және жазу әрекеттерінде қалыптасатын икем</div>
+  
+    <div class="key"><b>нәтижеге бағыттау:</b> оқу әрекетін күтілетін нәтижемен байланысты ұйымдастыру</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Оқыту мақсатының негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b14_0" value="a">
+          оқушыда қалыптасатын білім, дағды және құзыреттілікті анықтау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b14_0" value="b">
+          тілдік материалды оқу нәтижесінен бөлек беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b14_0" value="c">
+          сабақ тапсырмасын мақсатсыз ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b14_0" value="d">
+          оқушы әрекетін бағалаудан ажырату
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b14_0" value="e">
+          практикалық қолданымды сабақтан шығару
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: оқыту мақсаты оқушыда қалыптасатын білім, дағды және құзыреттілікті анықтайды. Қазақ тілін оқытуда мақсат сабақ мазмұнын, тапсырманы және нәтижені біріктіретін негізгі бағдар болады.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Практикалық қолданымның қазақ тілін оқытудағы мәні</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b14_1" value="a">
+          тілдік білімді сөйлеу, жазу және қатысымдық әрекетте пайдалану
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b14_1" value="b">
+          тілдік білімді тек анықтама ретінде жаттау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b14_1" value="c">
+          оқушы жауабын тілдік әрекеттен бөлек бағалау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b14_1" value="d">
+          жаттығуды сөйлеу мақсатынсыз орындау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b14_1" value="e">
+          сабақ нәтижесін оқушы әрекетінсіз анықтау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: практикалық қолданым тілдік білімді сөйлеу, жазу және қатысымдық әрекетте пайдалануды білдіреді. Тіл оқытуда білім нақты әрекет арқылы бекітіледі.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Оқыту мазмұнын құруда ескерілетін бөліктер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b14_2" value="a">
+          тілдік материал
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b14_2" value="b">
+          сөйлеу әрекеті
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b14_2" value="c">
+          жаттығулар жүйесі
+
+             </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b14_2" value="d">
+          бағалау өлшемі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b14_2" value="e">
+          оқушы деңгейі
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b14_2" value="f">
+          қатысымдық жағдаят
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b14_2" value="g">
+          мақсатсыз мәтін таңдау
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b14_2" value="h">
+          нәтижені елемеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: тілдік материал, сөйлеу әрекеті, жаттығулар жүйесі. Оқыту мазмұны тек ережелерден тұрмайды, ол оқушы әрекетімен және тапсырмалармен бірге құрылады.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Қатысымдық бағытқа сәйкес келетін әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b14_3" value="a">
+          тілді қарым-қатынас құралы ретінде қолдану
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b14_3" value="b">
+          оқушыны сөйлеу жағдаятына енгізу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b14_3" value="c">
+          айтылым мен жазылымды дамыту
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b14_3" value="d">
+          мәтін бойынша пікір білдіру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b14_3" value="e">
+          тыңдалым тапсырмасын орындау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b14_3" value="f">
+          ережені қолданымсыз жаттау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b14_3" value="g">
+          сөйлеу әрекетін шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: тілді қарым-қатынас құралы ретінде қолдану және оқушыны сөйлеу жағдаятына енгізу. Қатысымдық бағыт тілдік білімді нақты қарым-қатынаста қолдануға негізделеді.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b14_4" value="a">
+          мақсат, мазмұн және практикалық қолданым бірлікте ұйымдастырылғанда тілдік дағды нәтижелі қалыптасады
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b14_4" value="b">
+          оқыту мақсаты сабақ нәтижесіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b14_4" value="c">
+          оқыту мазмұны оқушы әрекетінсіз құрылады
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b14_4" value="d">
+          практикалық қолданым тілдік дағдыға қатыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b14_4" value="e">
+          қатысымдық бағытта сөйлеу әрекеті қолданылмайды
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: мақсат, мазмұн және практикалық қолданым бірлікте ұйымдастырылғанда тілдік дағды нәтижелі қалыптасады. Бұл қазақ тілін оқытудың әдістемелік жүйесін күшейтеді.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b14')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b14')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b14_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b15">
+    <div class="blockhead">
+      <h2>Модуль құрылымы, деңгейлік тапсырма және бағалау</h2>
+      <div class="meta">3-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде модуль құрылымындағы кезеңдер, деңгейлік тапсырмалардың қызметі, оқушының өздік әрекеті, бақылау мен бағалаудың модульдік оқытудағы орны қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Модульдік оқытуда оқу материалы бірізді кезеңдер арқылы меңгертіледі. Алдымен оқушы тақырыппен танысады, кейін негізгі мазмұнды меңгереді, жаттығу арқылы бекітеді, тапсырмалар арқылы қолданады, бақылау мен бағалау арқылы нәтижесін анықтайды. Деңгейлік тапсырмалар оқушының дайындық деңгейін ескеріп, оқу әрекетін саралауға мүмкіндік береді. Өздік әрекет оқушының білімді дербес меңгеруіне, тапсырманы саналы орындауына және нәтижесін бағалауына жағдай жасайды. Бағалау модуль соңында ғана емес, әр кезеңде оқу нәтижесін нақтылауға көмектеседі.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>модуль кезеңдері:</b> оқу материалын кіріспе, меңгерту, бекіту, бақылау және бағалау арқылы ұйымдастыру</div>
+  
+    <div class="key"><b>деңгейлік тапсырма:</b> оқушы мүмкіндігіне сай сараланған оқу тапсырмасы</div>
+  
+    <div class="key"><b>саралау:</b> оқушы деңгейін ескеріп тапсырма беру тәсілі</div>
+  
+    <div class="key"><b>өздік әрекет:</b> оқушының тапсырманы дербес орындап, нәтижеге жетуі</div>
+  
+    <div class="key"><b>бекіту:</b> меңгерілген білімді жаттығу арқылы тұрақтандыру</div>
+  
+    <div class="key"><b>аралық бақылау:</b> оқу барысында нәтижені тексеру және түзету амалы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Деңгейлік тапсырманың негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b15_0" value="a">
+          оқушының дайындық деңгейіне сай оқу әрекетін ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b15_0" value="b">
+          барлық оқушыға бірдей қиындықтағы тапсырма беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b15_0" value="c">
+          оқушы мүмкіндігін ескермеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b15_0" value="d">
+          тапсырманы оқу мақсатынан бөлу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b15_0" value="e">
+          бағалауды нәтижемен байланыстырмау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: деңгейлік тапсырма оқушының дайындық деңгейіне сай оқу әрекетін ұйымдастыруға көмектеседі. Модульдік оқытуда саралау оқушының өз мүмкіндігіне қарай алға жылжуына жағдай жасайды.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Модульдік оқытуда бағалаудың орны</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b15_1" value="a">
+          оқу нәтижесінің қалыптасу деңгейін анықтап, келесі әрекетті жоспарлау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b15_1" value="b">
+          оқу нәтижесіне қатысы жоқ сыртқы әрекет жасау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b15_1" value="c">
+          жаттығудан кейін қолданылмайтын бөлік болу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b15_1" value="d">
+          оқушының өздік әрекетін ескермеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b15_1" value="e">
+          сабақ мақсатына байланыссыз жүргізілу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: бағалау оқу нәтижесінің қалыптасу деңгейін анықтап, келесі әрекетті жоспарлауға мүмкіндік береді. Модульдік оқытуда бағалау оқу үдерісінің соңғы ғана емес, түзетуші бөлігі де болады.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Модульдік оқытудағы кезеңдік меңгертудің құрамына кіретін әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b15_2" value="a">
+          тақырыппен таныстыру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b15_2" value="b">
+          мазмұнды меңгерту
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b15_2" value="c">
+          жаттығу арқылы бекіту
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b15_2" value="d">
+          нәтижені бақылау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b15_2" value="e">
+          бағалау жүргізу
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b15_2" value="f">
+          қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b15_2" value="g">
+          тапсырманы мақсатсыз орындау
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b15_2" value="h">
+          оқушы әрекетін шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: тақырыппен таныстыру, мазмұнды меңгерту, жаттығу арқылы бекіту. Кезеңдік меңгерту материалды бірізді әрі жүйелі игертуге бағытталады.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Өздік әрекетті күшейтетін модульдік жұмыс түрлері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b15_3" value="a">
+          дербес тапсырма орындау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b15_3" value="b">
+          нәтижесін тексеру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b15_3" value="c">
+          қатесін түзету
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b15_3" value="d">
+          өз жұмысын бағалау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b15_3" value="e">
+          қайталау арқылы бекіту
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b15_3" value="f">
+          дайын жауапты түсінбей көшіру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b15_3" value="g">
+          тапсырмадан бас тарту
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: дербес тапсырма орындау және нәтижесін тексеру. Өздік әрекет оқушының жауапкершілігін арттырып, білімді саналы меңгеруіне көмектеседі.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b15_4" value="a">
+          модуль құрылымы, деңгейлік тапсырма және бағалау оқушының кезеңдік әрі саналы меңгеруін қамтамасыз етеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b15_4" value="b">
+          деңгейлік тапсырма оқушы мүмкіндігін ескермеуге арналған
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b15_4" value="c">
+          бағалау модульдік оқытуда қажет емес
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b15_4" value="d">
+          өздік әрекет оқу нәтижесіне әсер етпейді
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b15_4" value="e">
+          бекіту кезеңі модуль құрылымынан тыс тұрады
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модуль құрылымы, деңгейлік тапсырма және бағалау оқушының кезеңдік әрі саналы меңгеруін қамтамасыз етеді. Бұл модульдік оқытудың негізгі әдістемелік артықшылығын көрсетеді.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b15')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b15')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b15_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b16">
+    <div class="blockhead">
+      <h2>Мұғалімнің әдіснамалық ойлауы және кәсіби шешімі</h2>
+      <div class="meta">2-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде мұғалімнің әдіснамалық ойлауы, сабақ мақсатын анықтауы, мазмұн мен әдісті байланыстыруы, оқушы әрекетін ұйымдастыруы және нәтижеге бағытталған кәсіби шешім қабылдауы қарастырылады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Мұғалімнің әдіснамалық ойлауы оқыту үдерісін жай тапсырмалар жиынтығы ретінде емес, мақсат, мазмұн, әдіс, оқушы әрекеті және нәтиже байланысы ретінде түсінуінен көрінеді. Мұғалім сабақта қандай тілдік материалды не үшін беретінін, оны қандай әдіспен меңгертетінін, оқушы қандай әрекет орындайтынын және нәтиже қалай бағаланатынын алдын ала ойластырады. Әдіснамалық ойлау мұғалімге сабақ мазмұнын ғылыми негізде құруға, оқушы деңгейін ескеруге, тапсырманы мақсатқа сай таңдауға және оқу нәтижесін талдауға мүмкіндік береді.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>әдіснамалық ойлау:</b> оқыту мақсаты, мазмұны, әдісі және нәтижесін бірлікте талдай білу</div>
+  
+    <div class="key"><b>кәсіби шешім:</b> сабақ мақсатына сай әдіс, тапсырма және бағалау жолын таңдау</div>
+  
+    <div class="key"><b>оқушы әрекеті:</b> оқушының оқу мақсатына жету үшін орындайтын танымдық және тілдік жұмысы</div>
+  
+    <div class="key"><b>нәтижені талдау:</b> оқу мақсатының орындалу деңгейін анықтау</div>
+  
+    <div class="key"><b>әдісті таңдау:</b> оқу мазмұны мен оқушы деңгейіне сай тиімді тәсілді белгілеу</div>
+  
+    <div class="key"><b>сабақты жоспарлау:</b> мақсат, тапсырма, әрекет және бағалауды алдын ала жүйелеу</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Мұғалімнің әдіснамалық ойлауы қандай әрекетте көрінеді?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b16_0" value="a">
+          мақсат, мазмұн, оқушы әрекеті және нәтижені бірлікте ұйымдастыруда
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b16_0" value="b">
+          тілдік материалды оқушы деңгейін ескермей беруде
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b16_0" value="c">
+          сабақ мақсатын бағалаудан бөлек құруда
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b16_0" value="d">
+          оқушының сөйлеу әрекетін тапсырмадан шығаруда
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b16_0" value="e">
+          мәтінді тіл дамыту мақсатынан ажыратуда
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: мұғалімнің әдіснамалық ойлауы мақсат, мазмұн, оқушы әрекеті және нәтижені бірлікте ұйымдастыруынан көрінеді. Мұндай ойлау сабақтың ғылыми және практикалық бағытын сақтайды.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Кәсіби шешім қабылдауда мұғалім алдымен нені ескеруі керек?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b16_1" value="a">
+          сабақ мақсаты мен күтілетін оқу нәтижесін
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b16_1" value="b">
+          тапсырманы кездейсоқ таңдауды
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b16_1" value="c">
+          оқушы әрекетін жоспардан шығаруды
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b16_1" value="d">
+          бағалау өлшемін түсіндірмеуді
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b16_1" value="e">
+          тілдік материалды қолданымсыз беруді
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: мұғалім кәсіби шешім қабылдауда сабақ мақсаты мен күтілетін нәтижені ескеруі керек. Әдіс пен тапсырма осы мақсатқа қызмет етеді.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Әдіснамалық ойлауға тән мұғалім әрекеттері</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b16_2" value="a">
+          мақсатты нақтылау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b16_2" value="b">
+          мазмұнды жүйелеу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b16_2" value="c">
+          әдісті мақсатқа сай таңдау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b16_2" value="d">
+          оқушы әрекетін ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b16_2" value="e">
+          нәтижені талдау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b16_2" value="f">
+          тапсырманы кездейсоқ беру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b16_2" value="g">
+          бағалауды елемеу
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b16_2" value="h">
+          сабақ құрылымын бұзу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: мақсатты нақтылау, мазмұнды жүйелеу, әдісті мақсатқа сай таңдау. Бұл әрекеттер мұғалімнің оқыту үдерісін ғылыми негізде ұйымдастыра алатынын көрсетеді.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Сабақты жоспарлауда бірлікте қарастырылатын бөліктер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b16_3" value="a">
+          оқу мақсаты
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b16_3" value="b">
+          оқу тапсырмасы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b16_3" value="c">
+          оқушы әрекеті
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b16_3" value="d">
+          бағалау өлшемі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b16_3" value="e">
+          кері байланыс
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b16_3" value="f">
+          мақсатсыз жаттығу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b16_3" value="g">
+          нәтижені талдамау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: оқу мақсаты және оқу тапсырмасы. Сабақ нәтижелі болуы үшін мақсат пен тапсырма өзара байланыста құрылуы керек.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Бұл бөлім бойынша дұрыс қорытынды</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b16_4" value="a">
+          әдіснамалық ойлау мұғалімге сабақ мақсаты, мазмұны, әдісі және нәтижесін жүйелі байланыстыруға көмектеседі
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b16_4" value="b">
+          әдіснамалық ойлау сабақ мақсатын нәтижеден ажыратады
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b16_4" value="c">
+          кәсіби шешім оқушы әрекетін ескермеуге негізделеді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b16_4" value="d">
+          сабақ мазмұны бағалау өлшемімен байланыспайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b16_4" value="e">
+          әдісті таңдау оқу мақсатына тәуелді емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: әдіснамалық ойлау мұғалімге сабақ мақсаты, мазмұны, әдісі және нәтижесін жүйелі байланыстыруға көмектеседі. Бұл кәсіби-әдістемелік құзыреттіліктің маңызды белгісі.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b16')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b16')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b16_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b17">
+    <div class="blockhead">
+      <h2>Модульдік оқыту бойынша қорытынды аралас тест</h2>
+      <div class="meta">3-кітап</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл бөлімде модульдік оқыту, модуль құрылымы, кезеңдік меңгерту, деңгейлік тапсырма, өздік әрекет, бекіту, бақылау және бағалау бойынша негізгі ұғымдар жинақталады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Модульдік оқыту қазақ тілін жүйелі, мақсатты және кезеңдік түрде меңгертуге бағытталады. Бұл технологияда оқу материалы мазмұндық тұтастық ретінде құрылады, оқушы бір тақырып аясында кіріспеден бастап бекітуге, бақылауға және бағалауға дейін бірізді әрекет орындайды. Деңгейлік тапсырмалар оқушы мүмкіндігін ескеріп, саралап оқытуға жағдай жасайды. Өздік әрекет пен бағалау оқушының оқу нәтижесін саналы түсінуіне және келесі қадамын анықтауына көмектеседі.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>модульдік жүйе:</b> оқу материалын мақсатты әрі кезеңдік түрде меңгертетін құрылым</div>
+  
+    <div class="key"><b>мазмұндық тұтастық:</b> бір тақырып аясындағы материалдардың өзара байланысы</div>
+  
+    <div class="key"><b>кезеңдік меңгерту:</b> оқу материалын бірізді қадамдар арқылы игерту</div>
+  
+    <div class="key"><b>деңгейлік саралау:</b> оқушы мүмкіндігіне қарай тапсырма беру</div>
+  
+    <div class="key"><b>бақылау:</b> оқу нәтижесін тексеру және түзету амалы</div>
+  
+    <div class="key"><b>бағалау:</b> оқушы жетістігін белгіленген өлшем арқылы анықтау</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Модульдік оқытудың басты ерекшелігі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b17_0" value="a">
+          оқу материалын мазмұндық тұтастық және нәтиже бірлігімен меңгерту
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b17_0" value="b">
+          оқу материалын ретсіз жаттығулар түрінде беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b17_0" value="c">
+          оқушының өздік әрекетін қолданбау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b17_0" value="d">
+          бағалауды оқу нәтижесінен ажырату
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b17_0" value="e">
+          тапсырманы оқушы деңгейін ескермей ұсыну
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модульдік оқыту оқу материалын мазмұндық тұтастық және нәтиже бірлігімен меңгертеді. Бұл жүйе материалды шашыраңқы емес, кезеңмен игертуге бағытталады.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Кезеңдік меңгерту не үшін қажет?</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b17_1" value="a">
+          оқу материалын бірізді қадамдар арқылы саналы игерту үшін
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b17_1" value="b">
+          оқу материалын түсіндірмей аяқтау үшін
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b17_1" value="c">
+          жаттығуды мақсатсыз орындату үшін
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b17_1" value="d">
+          оқушы әрекетін бақылаусыз қалдыру үшін
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b17_1" value="e">
+          бағалауды модульден тыс жүргізу үшін
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: кезеңдік меңгерту оқу материалын бірізді қадамдар арқылы саналы игерту үшін қажет. Бұл модульдің ішкі құрылымын сақтайды.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Модульдік оқытудың негізгі әдістемелік артықшылықтары</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b17_2" value="a">
+          материалды жүйелі меңгерту
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b17_2" value="b">
+          оқушының өздік әрекетін күшейту
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b17_2" value="c">
+          деңгейлік тапсырма арқылы саралау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b17_2" value="d">
+          бекіту мен бақылауды байланыстыру
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b17_2" value="e">
+          нәтижені бағалау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b17_2" value="f">
+          тапсырманы кездейсоқ таңдау
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b17_2" value="g">
+          оқушы деңгейін ескермеу
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b17_2" value="h">
+          қайталауды қолданбау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: материалды жүйелі меңгерту, оқушының өздік әрекетін күшейту, деңгейлік тапсырма арқылы саралау. Бұл модульдік оқытудың негізгі әдістемелік артықшылықтарын көрсетеді.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Модуль соңында оқу нәтижесін нақтылауға көмектесетін әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b17_3" value="a">
+          бақылау жүргізу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b17_3" value="b">
+          бағалау жасау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b17_3" value="c">
+          қатені түзету
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b17_3" value="d">
+          келесі әрекетті жоспарлау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b17_3" value="e">
+          оқушы нәтижесін талдау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b17_3" value="f">
+          оқушы жауабын елемеу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b17_3" value="g">
+          бағалау өлшемін қолданбау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: бақылау жүргізу және бағалау жасау. Бұл әрекеттер оқушының модуль бойынша нәтижесін анықтап, келесі оқу қадамын жоспарлауға мүмкіндік береді.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Модульдік оқыту бойынша жалпы дұрыс тұжырым</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b17_4" value="a">
+          модульдік оқыту мақсат, мазмұн, кезеңдік тапсырма, бақылау және бағалауды бір жүйеге біріктіреді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b17_4" value="b">
+          модульдік оқыту оқу мақсатын нәтижеден бөледі
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b17_4" value="c">
+          модульдік жүйеде деңгейлік тапсырма қолданылмайды
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b17_4" value="d">
+          өздік әрекет модульдік оқытуда маңызды емес
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b17_4" value="e">
+          модуль құрылымы бағалаусыз аяқталады
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модульдік оқыту мақсат, мазмұн, кезеңдік тапсырма, бақылау және бағалауды бір жүйеге біріктіреді. Бұл оның қазақ тілін жүйелі меңгертудегі басты қызметін көрсетеді.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b17')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b17')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b17_result"></div>
+    </div>
+  </section>
+
+  <section class="block" id="b18">
+    <div class="blockhead">
+      <h2>Әдіснамалық негіздер, модульдік оқыту және интербелсенді әдістер бойынша қорытынды тест</h2>
+      <div class="meta">Қорытынды</div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Бөлім мазмұны</h3>
+      <p>Бұл қорытынды бөлімде қазақ тілін оқытудың әдіснамалық негіздері, модульдік оқыту, интербелсенді әдістер, бірлескен әрекет, сыни ойлау, рефлексия, бағалау және мұғалімнің кәсіби-әдістемелік шешімі бойынша негізгі ұғымдар жинақталады.</p>
+    </div>
+
+    <div class="infobox green">
+      <h3>Қысқаша конспект</h3>
+      <p>Қазақ тілін оқытуда әдіснамалық негіз, модульдік құрылым және интербелсенді әдістер бірін-бірі толықтырады. Әдіснамалық негіз оқыту мақсаты, мазмұны, әдісі және нәтижесін ғылыми бірлікте қарастырса, модульдік оқыту оқу материалын жүйелі, кезеңдік және нәтижеге бағытталған түрде меңгертеді. Интербелсенді әдістеме оқушыны өзара әрекетке, талқылауға, дәлелдеуге, рефлексияға және практикалық қолданымға енгізеді. Мұғалім осы үш бағытты сабақ мақсатына сай біріктіргенде оқушының тілдік, қатысымдық, танымдық және рефлексиялық дағдылары нәтижелі қалыптасады.</p>
+    </div>
+
+    <div class="infobox orange">
+      <h3>Негізгі ұғымдар</h3>
+      <div class="keys">
+    <div class="key"><b>әдіснамалық негіз:</b> оқыту жүйесін ғылыми мақсат, мазмұн, әдіс және нәтиже бірлігінде қарастыру</div>
+  
+    <div class="key"><b>модульдік оқыту:</b> оқу материалын мазмұндық тұтастық және кезеңдік құрылым арқылы меңгерту</div>
+  
+    <div class="key"><b>интербелсенді әдіс:</b> оқушыны белсенді әрекетке, талқылауға және бірлескен жұмысқа енгізетін тәсіл</div>
+  
+    <div class="key"><b>қатысымдық дағды:</b> тілді тыңдау, айту, оқу және жазу арқылы қолдану икемі</div>
+  
+    <div class="key"><b>рефлексиялық әрекет:</b> оқушының өз оқу нәтижесін талдап, келесі қадамын анықтауы</div>
+  
+    <div class="key"><b>кәсіби-әдістемелік шешім:</b> мұғалімнің мақсатқа сай мазмұн, әдіс, тапсырма және бағалауды таңдауы</div>
+  </div>
+    </div>
+
+    <div class="infobox blue">
+      <h3>Тест сұрақтары</h3>
+      
+  <div class="q" data-q="0" data-answer="a">
+    <div class="qtop">
+      <span class="badge">A деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">1. Әдіснамалық негіздің қазақ тілін оқытудағы негізгі қызметі</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b18_0" value="a">
+          мақсат, мазмұн, әдіс және нәтижені ғылыми байланыста ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b18_0" value="b">
+          тілдік материалды оқушы әрекетінен бөлек беру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b18_0" value="c">
+          сабақ мақсатын бағалаудан ажырату
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b18_0" value="d">
+          оқушының практикалық қолданымын шектеу
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b18_0" value="e">
+          тапсырманы оқу нәтижесінсіз орындату
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: әдіснамалық негіз мақсат, мазмұн, әдіс және нәтижені ғылыми байланыста ұйымдастырады. Бұл қазақ тілін оқыту жүйесінің теориялық және практикалық бағытын айқындайды.</div>
+  </div>
+  <div class="q" data-q="1" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">2. Модульдік оқытудың интербелсенді әдіспен ұқсас тұсы</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b18_1" value="a">
+          оқушы әрекетін нәтижеге бағыттап, оқу үдерісін жүйелі ұйымдастыруы
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b18_1" value="b">
+          оқушыны сабақта белсенді қатыстырмауы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b18_1" value="c">
+          тапсырманы мақсатсыз беруге негізделуі
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b18_1" value="d">
+          бағалауды оқу нәтижесінен бөлуі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b18_1" value="e">
+          тілдік материалды қолданымсыз қалдыруы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: модульдік оқыту да, интербелсенді әдіс те оқушы әрекетін нәтижеге бағыттап ұйымдастыруға сүйенеді. Екеуі де оқу үдерісін мақсат, тапсырма және нәтиже байланысында қарастырады.</div>
+  </div>
+  <div class="q" data-q="2" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">3. Интербелсенді оқуда оқушының негізгі орны</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b18_2" value="a">
+          білімді өз әрекеті, тәжірибесі және талқылауы арқылы құрастырушы тұлға
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b18_2" value="b">
+          дайын жауапты ғана қабылдайтын тыңдаушы
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b18_2" value="c">
+          сабақта пікір білдірмейтін бақылаушы
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b18_2" value="d">
+          тапсырманы түсінбей көшіретін орындаушы
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b18_2" value="e">
+          өз нәтижесін талдамайтын қабылдаушы
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: интербелсенді оқуда оқушы білімді өз әрекеті, тәжірибесі және талқылауы арқылы құрастыратын тұлға ретінде қарастырылады. Бұл Әлімов еңбегіндегі негізгі идеялармен байланысты.</div>
+  </div>
+  <div class="q" data-q="3" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">4. Қазақ тілін нәтижелі оқыту үшін бірлікте ұйымдастырылатын бөліктер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b18_3" value="a">
+          оқыту мақсаты
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b18_3" value="b">
+          оқыту мазмұны
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b18_3" value="c">
+          оқушы әрекеті
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b18_3" value="d">
+          бағалау өлшемі
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b18_3" value="e">
+          кері байланыс
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b18_3" value="f">
+          мақсатсыз тапсырма
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b18_3" value="g">
+          нәтижені елемеу
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b18_3" value="h">
+          оқушы пікірін шектеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: оқыту мақсаты, оқыту мазмұны, оқушы әрекеті. Бұл бөліктер бірлікте ұйымдастырылғанда сабақ нәтижелі болады.</div>
+  </div>
+  <div class="q" data-q="4" data-answer="a,b,c">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">5. Модульдік оқыту мен интербелсенді сабақта оқушыны белсендіретін әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b18_4" value="a">
+          өздік жұмыс орындау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b18_4" value="b">
+          пікір алмасу
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b18_4" value="c">
+          тапсырманы талдау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b18_4" value="d">
+          қорытынды жасау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b18_4" value="e">
+          нәтижені бағалау
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b18_4" value="f">
+          жауапты түсінбей көшіру
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b18_4" value="g">
+          талқылаудан бас тарту
+        </label>
+      
+        <label class="opt" data-id="h">
+          <input type="checkbox" name="b18_4" value="h">
+          қатені елемеу
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: өздік жұмыс орындау, пікір алмасу, тапсырманы талдау. Бұл әрекеттер оқушыны оқу үдерісінің белсенді қатысушысына айналдырады.</div>
+  </div>
+  <div class="q" data-q="5" data-answer="a,b">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бірнеше дұрыс жауап</span>
+    </div>
+    <div class="qtitle">6. Мұғалімнің кәсіби-әдістемелік шешіміне тән әрекеттер</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="checkbox" name="b18_5" value="a">
+          сабақ мақсатын нақтылау
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="checkbox" name="b18_5" value="b">
+          әдісті мазмұнға сай таңдау
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="checkbox" name="b18_5" value="c">
+          тапсырманы оқушы деңгейіне бейімдеу
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="checkbox" name="b18_5" value="d">
+          бағалау өлшемін анықтау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="checkbox" name="b18_5" value="e">
+          кері байланыс ұйымдастыру
+        </label>
+      
+        <label class="opt" data-id="f">
+          <input type="checkbox" name="b18_5" value="f">
+          оқушы әрекетін ескермеу
+        </label>
+      
+        <label class="opt" data-id="g">
+          <input type="checkbox" name="b18_5" value="g">
+          сабақ нәтижесін талдамау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауаптар: сабақ мақсатын нақтылау және әдісті мазмұнға сай таңдау. Мұғалімнің кәсіби шешімі мақсат, мазмұн, әдіс және нәтиже байланысына сүйенеді.</div>
+  </div>
+  <div class="q" data-q="6" data-answer="a">
+    <div class="qtop">
+      <span class="badge">B деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">7. Рефлексия мен кері байланыстың ортақ мақсаты</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b18_6" value="a">
+          оқушының оқу нәтижесін түсініп, келесі әрекетін жақсартуына көмектесу
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b18_6" value="b">
+          оқушының қатесін талдаусыз қалдыру
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b18_6" value="c">
+          бағалау өлшемін жасырын ұстау
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b18_6" value="d">
+          сабақты нәтижесіз аяқтау
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b18_6" value="e">
+          оқушы пікірін есепке алмау
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: рефлексия мен кері байланыс оқушының оқу нәтижесін түсінуіне және келесі әрекетін жақсартуына көмектеседі. Бұл интербелсенді сабақтың нәтижеге бағытталған бөліктері.</div>
+  </div>
+  <div class="q" data-q="7" data-answer="a">
+    <div class="qtop">
+      <span class="badge">C деңгей</span>
+      <span class="badge">бір дұрыс жауап</span>
+    </div>
+    <div class="qtitle">8. Барлық бөлім бойынша жалпы дұрыс тұжырым</div>
+    <div class="opts">
+      
+        <label class="opt" data-id="a">
+          <input type="radio" name="b18_7" value="a">
+          әдіснамалық негіз, модульдік оқыту және интербелсенді әдістер оқушының тілдік әрі танымдық дамуын бір жүйеде қамтамасыз етеді
+        </label>
+      
+        <label class="opt" data-id="b">
+          <input type="radio" name="b18_7" value="b">
+          әдіснамалық негіз оқыту мақсатына қатыспайды
+        </label>
+      
+        <label class="opt" data-id="c">
+          <input type="radio" name="b18_7" value="c">
+          модульдік оқыту оқушының өздік әрекетін қажет етпейді
+        </label>
+      
+        <label class="opt" data-id="d">
+          <input type="radio" name="b18_7" value="d">
+          интербелсенді әдістер талқылау мен рефлексияны қолданбайды
+        </label>
+      
+        <label class="opt" data-id="e">
+          <input type="radio" name="b18_7" value="e">
+          қазақ тілін оқытуда практикалық қолданым маңызды емес
+        </label>
+      
+    </div>
+    <div class="explain"><b>Түсіндіру:</b> Дұрыс жауап: әдіснамалық негіз, модульдік оқыту және интербелсенді әдістер оқушының тілдік әрі танымдық дамуын бір жүйеде қамтамасыз етеді. Бұл сайттағы барлық бөлімдердің ортақ қорытындысы.</div>
+  </div>
+      <div class="actions">
+        <button class="btn" onclick="checkBlock('b18')">Нәтижені көрсету</button>
+        <button class="btn btn2" onclick="resetBlock('b18')">Қайта белгілеу</button>
+      </div>
+      <div class="result" id="b18_result"></div>
+    </div>
+  </section>
+</div>
+
+<div class="footer">© @elnazm_ln — барлық құқық қорғалған</div>
+
+</main>
+
+<script>
+function sameArray(a,b){
+  if(a.length!==b.length)return false;
+  const aa=[...a].sort();
+  const bb=[...b].sort();
+  return aa.every((v,i)=>v===bb[i]);
+}
+function checkBlock(id){
+  const sec=document.getElementById(id);
+  let score=0;
+  const questions=[...sec.querySelectorAll('.q')];
+  questions.forEach((qEl)=>{
+    const answers=(qEl.dataset.answer||'').split(',').filter(Boolean);
+    const selected=[...qEl.querySelectorAll('input:checked')].map(i=>i.value);
+    if(sameArray(selected,answers)) score++;
+    qEl.querySelectorAll('.opt').forEach(opt=>{
+      const oid=opt.dataset.id;
+      opt.classList.remove('correct','wrong');
+      if(answers.includes(oid)) opt.classList.add('correct');
+      if(selected.includes(oid) && !answers.includes(oid)) opt.classList.add('wrong');
+    });
+    const ex=qEl.querySelector('.explain');
+    if(ex) ex.style.display='block';
+  });
+  const result=document.getElementById(id+'_result');
+  result.style.display='block';
+  result.innerHTML='Нәтиже: '+score+' / '+questions.length;
+}
+function resetBlock(id){
+  const sec=document.getElementById(id);
+  sec.querySelectorAll('input').forEach(i=>i.checked=false);
+  sec.querySelectorAll('.opt').forEach(o=>o.classList.remove('correct','wrong'));
+  sec.querySelectorAll('.explain').forEach(e=>e.style.display='none');
+  const result=document.getElementById(id+'_result');
+  result.style.display='none';
+  result.innerHTML='';
+}
+</script>
+</body>
+</html>
